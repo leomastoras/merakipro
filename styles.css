@@ -916,7 +916,7 @@ h4 { font-size: 1.15rem; font-family: var(--font-sans); font-weight: 700; }
   position: relative;
   display: flex;
   align-items: flex-end;
-  padding: 20px;
+  padding: 0px;
   color: var(--cream);
   font-weight: 600;
   letter-spacing: .5px;
@@ -941,11 +941,11 @@ h4 { font-size: 1.15rem; font-family: var(--font-sans); font-weight: 700; }
 }
 .g-item:hover { transform: scale(1.02); }
 
-.g1 { grid-column: span 2; grid-row: span 2; background: linear-gradient(135deg, #C66B5C, #A8412F); }
-.g2 { background: linear-gradient(135deg, #1F4F8A, #143864); }
-.g3 { background: linear-gradient(135deg, #E0AC73, #B85042); }
-.g4 { background: linear-gradient(135deg, #2C5F9E, #1F4F8A); }
-.g5 { background: linear-gradient(135deg, #EBC596, #C66B5C); }
+.g1 { grid-column: span 2; grid-row: span 2; background: linear-gradient(135deg, #C66B5C, #A8412F); background-image: url(1.png); background-size: cover;}
+.g2 { background: linear-gradient(135deg, #1F4F8A, #143864); background-image: url(2.png); background-size: cover;}
+.g3 { background: linear-gradient(135deg, #E0AC73, #B85042); background-image: url(3.png); background-size: cover;}
+.g4 { background: linear-gradient(135deg, #2C5F9E, #1F4F8A); background-image: url(4.png); background-size: cover;}
+.g5 { background: linear-gradient(135deg, #EBC596, #C66B5C); background-image: url(5.png); background-size: cover;}
 
 /* ============ TESTIMONIALS ============ */
 .testimonials {
