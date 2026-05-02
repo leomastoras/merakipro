@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Το μεράκι της Γιωτάννας — Παραδοσιακή Κουζίνα & Delivery</title>
+  <meta name="description" content="Το μεράκι της Γιωτάννας — pizza, burgers, καλαμάκια, club sandwiches, ζυμαρικά και γλυκά φτιαγμένα με αγάπη. Παραγγελίες, κρατήσεις και delivery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+</head>
+<body>
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo" aria-label="Αρχική">
+        <img src="logo.svg" alt="Το μεράκι της Γιωτάννας" />
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#about">Το Μαγαζί</a>
+        <a href="#menu">Μενού</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#reservation">Κράτηση</a>
+        <a href="#contact">Επικοινωνία</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="eyebrow">Καλώς ήρθατε</span>
+      <h1 class="hero-title">
+        <span class="line-top">Το μεράκι</span>
+        <span class="line-mid">της</span>
+        <span class="line-bot">Γιωτάννας</span>
+      </h1>
+      <p class="hero-sub">Παραδοσιακή φιλοξενία, σπιτικές γεύσεις και κάθε πιάτο φτιαγμένο με αγάπη — από το 2008.</p>
+      <div class="hero-cta">
+        <a href="#delivery" class="btn btn-primary">Παραγγελία Delivery</a>
+        <a href="#reservation" class="btn btn-ghost">Κράτηση Τραπεζιού</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>Ανοιχτά Σήμερα</strong><span>12:00 — 00:30</span></div>
+        <div><strong>Delivery</strong><span>13:00 — 23:30</span></div>
+        <div><strong>Τηλέφωνο</strong><span>+30 210 555 0144</span></div>
+      </div>
+    </div>
+    <div class="hero-arch" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Το Μαγαζί</span>
+        <h2>Μια γωνιά γεμάτη μεράκι</h2>
+        <p class="lead">Σε ένα παραδοσιακό διώροφο της πλατείας, με γαλάζια παντζούρια και κεραμοσκεπή, η Γιωτάννα μαγειρεύει εδώ και χρόνια ό,τι αγαπάει — με αγνά υλικά, οικογενειακές συνταγές και τη φροντίδα που δίνει νόημα στη λέξη «μεράκι».</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M5 5l3 3M2 12h4M5 19l3-3M12 18v4M19 19l-3-3M22 12h-4M19 5l-3 3"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <h3>Φρέσκα Υλικά Καθημερινά</h3>
+          <p>Ψώνια από τη λαϊκή, φρέσκα ψωμιά από τον φούρνο της γειτονιάς και κρέατα από τον ντόπιο χασάπη. Ό,τι σερβίρουμε σήμερα, αγοράστηκε σήμερα.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9c-2 0-4-.5-5.5-1.5L3 21l1.5-3.5C3.5 16 3 14 3 12z"/></svg>
+          </div>
+          <h3>Οικογενειακές Συνταγές</h3>
+          <p>Από τη γιαγιά Ευαγγελία στη μαμά Γιωτάννα — μυστικά τριών γενεών στη ζύμη της πίτσας, στις σάλτσες και στο σπιτικό γλυκό του κουταλιού.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-7 11-7 11h-4z"/></svg>
+          </div>
+          <h3>Φιλόξενη Ατμόσφαιρα</h3>
+          <p>Δροσερή αυλή κάτω από τη μουριά το καλοκαίρι, ζεστή σάλα με τζάκι τον χειμώνα. Έλα για έναν καφέ, μείνε για το βραδινό.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 11h14l-1.5 8.5a2 2 0 0 1-2 1.5h-7a2 2 0 0 1-2-1.5L5 11z"/><path d="M9 11V7a3 3 0 0 1 6 0v4"/></svg>
+          </div>
+          <h3>Σπιτικά Γλυκά</h3>
+          <p>Τσιζκέικ φράουλα, σοκολατόπιτα, λουκουμάδες με μέλι και παγωτό — όλα φτιαγμένα στην κουζίνα μας, χωρίς συντηρητικά.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          </div>
+          <h3>Delivery Παντού στην Πόλη</h3>
+          <p>Σε 30 λεπτά στο σπίτι ή το γραφείο σας. Συσκευασίες που κρατούν το φαγητό ζεστό και τραγανό μέχρι την πόρτα σας.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2h-4v-7h-6v7H5a2 2 0 0 1-2-2V10z"/></svg>
+          </div>
+          <h3>Ιδιωτικές Εκδηλώσεις</h3>
+          <p>Παιδικά πάρτι, ονομαστικές εορτές, εταιρικά δείπνα. Κλείστε ολόκληρη τη σάλα και αφήστε τα υπόλοιπα σ' εμάς.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="section menu" id="menu">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Η Κουζίνα Μας</span>
+        <h2>Το Μενού</h2>
+        <p class="lead">Από τραγανές πίτσες ξύλου μέχρι ζουμερά καλαμάκια — διάλεξε ό,τι σου ανοίγει την όρεξη.</p>
+      </div>
+
+      <div class="menu-tabs" role="tablist">
+        <button class="tab active" data-tab="pizza" role="tab"><span class="tab-emoji">🍕</span> Πίτσες</button>
+        <button class="tab" data-tab="burgers" role="tab"><span class="tab-emoji">🍔</span> Burgers</button>
+        <button class="tab" data-tab="souvlaki" role="tab"><span class="tab-emoji">🍢</span> Καλαμάκια</button>
+        <button class="tab" data-tab="club" role="tab"><span class="tab-emoji">🥪</span> Club Sandwiches</button>
+        <button class="tab" data-tab="pasta" role="tab"><span class="tab-emoji">🍝</span> Ζυμαρικά</button>
+        <button class="tab" data-tab="sweets" role="tab"><span class="tab-emoji">🍰</span> Γλυκά</button>
+        <button class="tab" data-tab="drinks" role="tab"><span class="tab-emoji">🥤</span> Ποτά</button>
+      </div>
+
+      <div class="menu-panel active" data-panel="pizza">
+        <div class="menu-grid">
+          <button type="button" class="menu-item" data-id="pz1" data-name="Πίτσα Μαργαρίτα" data-price="9.50"><span class="mi-emoji">🍕</span><div class="mi-body"><div class="mi-head"><h4>Μαργαρίτα</h4><span class="price">9,50€</span></div><p>Σάλτσα ντομάτας, μοτσαρέλα, φρέσκος βασιλικός, παρθένο ελαιόλαδο.</p></div><span class="add-btn" aria-label="Προσθήκη">+</span></button>
+          <button type="button" class="menu-item" data-id="pz2" data-name="Πίτσα Σπέσιαλ Γιωτάννας" data-price="12.80"><span class="mi-emoji">🍕</span><div class="mi-body"><div class="mi-head"><h4>Σπέσιαλ Γιωτάννας</h4><span class="price">12,80€</span></div><p>Ζαμπόν, μπέικον, λουκάνικο, πιπεριές, μανιτάρια, μαύρες ελιές.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="pz3" data-name="Πίτσα Προσούτο &amp; Ρόκα" data-price="13.50"><span class="mi-emoji">🍕</span><div class="mi-body"><div class="mi-head"><h4>Προσούτο &amp; Ρόκα</h4><span class="price">13,50€</span></div><p>Μοτσαρέλα φιορ ντι λάτε, προσούτο κρούντο, φρέσκια ρόκα, παρμεζάνα.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="pz4" data-name="Πίτσα Καπνιστή BBQ" data-price="12.20"><span class="mi-emoji">🍕</span><div class="mi-body"><div class="mi-head"><h4>Καπνιστή BBQ</h4><span class="price">12,20€</span></div><p>Σάλτσα BBQ, ψητό κοτόπουλο, καπνιστή μοτσαρέλα, κρεμμύδι, κόλιανδρος.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="pz5" data-name="Πίτσα Φούρνο Καμένη" data-price="11.90"><span class="mi-emoji">🌶️</span><div class="mi-body"><div class="mi-head"><h4>Φούρνο Καμένη</h4><span class="price">11,90€</span></div><p>Καυτερές πιπεριές, ντοματίνια, σαλάμι αέρος, σκόρδο, πεπερονσίνο.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="pz6" data-name="Πίτσα Λαχανικών" data-price="10.80"><span class="mi-emoji">🥬</span><div class="mi-body"><div class="mi-head"><h4>Λαχανικών</h4><span class="price">10,80€</span></div><p>Κολοκυθάκι, μελιτζάνα, πιπεριές, μανιτάρια, ελιές, φέτα, ρίγανη.</p></div><span class="add-btn">+</span></button>
+        </div>
+      </div>
+
+      <div class="menu-panel" data-panel="burgers">
+        <div class="menu-grid">
+          <button type="button" class="menu-item" data-id="bg1" data-name="Burger Classic Beef" data-price="10.50"><span class="mi-emoji">🍔</span><div class="mi-body"><div class="mi-head"><h4>Classic Beef</h4><span class="price">10,50€</span></div><p>200γρ μοσχαρίσιο μπιφτέκι, τσένταρ, μαρούλι, ντομάτα, αγγουράκι τουρσί, σπιτική σως.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="bg2" data-name="Burger Double Bacon" data-price="13.90"><span class="mi-emoji">🥓</span><div class="mi-body"><div class="mi-head"><h4>Double Bacon</h4><span class="price">13,90€</span></div><p>Δύο μπιφτέκια, διπλό τσένταρ, τραγανό μπέικον, καραμελωμένο κρεμμύδι.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="bg3" data-name="Burger Chicken Crispy" data-price="11.20"><span class="mi-emoji">🍗</span><div class="mi-body"><div class="mi-head"><h4>Chicken Crispy</h4><span class="price">11,20€</span></div><p>Φιλέτο κοτόπουλο τραγανό, μαρούλι iceberg, ντομάτα, σως μουστάρδας.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="bg4" data-name="Burger Veggie Halloumi" data-price="10.80"><span class="mi-emoji">🧀</span><div class="mi-body"><div class="mi-head"><h4>Veggie Halloumi</h4><span class="price">10,80€</span></div><p>Ψητό χαλούμι, ψητή μελιτζάνα, ντομάτα, ρόκα, βασιλικός pesto.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="bg5" data-name="Burger Smokey BBQ" data-price="12.40"><span class="mi-emoji">🔥</span><div class="mi-body"><div class="mi-head"><h4>Smokey BBQ</h4><span class="price">12,40€</span></div><p>Μπιφτέκι, καπνιστό τσένταρ, πούλιες κρεμμυδιού, σως barbeque.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="bg6" data-name="Burger Truffle Mushroom" data-price="14.20"><span class="mi-emoji">🍄</span><div class="mi-body"><div class="mi-head"><h4>Truffle Mushroom</h4><span class="price">14,20€</span></div><p>Μπιφτέκι, μανιτάρια πορτομπέλο, τρούφα, γκρουγιέρα, μαγιονέζα τρούφας.</p></div><span class="add-btn">+</span></button>
+        </div>
+      </div>
+
+      <div class="menu-panel" data-panel="souvlaki">
+        <div class="menu-grid">
+          <button type="button" class="menu-item" data-id="sv1" data-name="Καλαμάκι Χοιρινό" data-price="2.20"><span class="mi-emoji">🍢</span><div class="mi-body"><div class="mi-head"><h4>Καλαμάκι Χοιρινό</h4><span class="price">2,20€</span></div><p>Παραδοσιακό καλαμάκι από φρέσκο χοιρινό σπάλα, ψημένο στα κάρβουνα.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="sv2" data-name="Καλαμάκι Κοτόπουλο" data-price="2.40"><span class="mi-emoji">🍗</span><div class="mi-body"><div class="mi-head"><h4>Καλαμάκι Κοτόπουλο</h4><span class="price">2,40€</span></div><p>Φιλέτο κοτόπουλο μαριναρισμένο σε γιαούρτι, λεμόνι και βότανα.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="sv3" data-name="Πιτόγυρο Χοιρινό" data-price="4.20"><span class="mi-emoji">🌯</span><div class="mi-body"><div class="mi-head"><h4>Πιτόγυρο Χοιρινό</h4><span class="price">4,20€</span></div><p>Με ντομάτα, κρεμμύδι, πατάτες, τζατζίκι, ρίγανη.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="sv4" data-name="Πιτόγυρο Κοτόπουλο" data-price="4.40"><span class="mi-emoji">🌯</span><div class="mi-body"><div class="mi-head"><h4>Πιτόγυρο Κοτόπουλο</h4><span class="price">4,40€</span></div><p>Με ντομάτα, κρεμμύδι, πατάτες, σως γιαουρτιού.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="sv5" data-name="Μερίδα Καλαμάκια (4τμχ)" data-price="12.80"><span class="mi-emoji">🍖</span><div class="mi-body"><div class="mi-head"><h4>Μερίδα Καλαμάκια (4τμχ)</h4><span class="price">12,80€</span></div><p>Συνοδεύεται με πίτες, πατάτες, ντομάτα, κρεμμύδι και τζατζίκι.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="sv6" data-name="Κοντοσούβλι Χωριάτικο" data-price="14.50"><span class="mi-emoji">🥩</span><div class="mi-body"><div class="mi-head"><h4>Κοντοσούβλι Χωριάτικο</h4><span class="price">14,50€</span></div><p>Παραδοσιακό κοντοσούβλι αργοψημένο, με πατάτες φούρνου και πίτες.</p></div><span class="add-btn">+</span></button>
+        </div>
+      </div>
+
+      <div class="menu-panel" data-panel="club">
+        <div class="menu-grid">
+          <button type="button" class="menu-item" data-id="cl1" data-name="Club Classic" data-price="8.90"><span class="mi-emoji">🥪</span><div class="mi-body"><div class="mi-head"><h4>Club Classic</h4><span class="price">8,90€</span></div><p>Κοτόπουλο, μπέικον, τυρί, μαρούλι, ντομάτα, μαγιονέζα — με πατάτες.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="cl2" data-name="Club Γαλοπούλας" data-price="8.50"><span class="mi-emoji">🥪</span><div class="mi-body"><div class="mi-head"><h4>Club Γαλοπούλας</h4><span class="price">8,50€</span></div><p>Καπνιστή γαλοπούλα, έμενταλ, ντομάτα, μαρούλι, σως μουστάρδας.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="cl3" data-name="Club Σολομού" data-price="11.20"><span class="mi-emoji">🐟</span><div class="mi-body"><div class="mi-head"><h4>Club Σολομού</h4><span class="price">11,20€</span></div><p>Καπνιστός σολομός, τυρί κρέμα, άνηθος, αγγούρι, ντομάτα.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="cl4" data-name="Club Vegan" data-price="9.40"><span class="mi-emoji">🥑</span><div class="mi-body"><div class="mi-head"><h4>Club Vegan</h4><span class="price">9,40€</span></div><p>Ψητά λαχανικά, χούμους, αβοκάντο, ντομάτα, ρόκα.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="cl5" data-name="Club BLT" data-price="8.20"><span class="mi-emoji">🥓</span><div class="mi-body"><div class="mi-head"><h4>Club BLT</h4><span class="price">8,20€</span></div><p>Τραγανό μπέικον, μαρούλι, ντομάτα, μαγιονέζα — το κλασικό.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="cl6" data-name="Club Tuna" data-price="8.80"><span class="mi-emoji">🐟</span><div class="mi-body"><div class="mi-head"><h4>Club Tuna</h4><span class="price">8,80€</span></div><p>Σαλάτα τόνου με κρεμμύδι, μαρούλι, ντομάτα, αγγούρι τουρσί.</p></div><span class="add-btn">+</span></button>
+        </div>
+      </div>
+
+      <div class="menu-panel" data-panel="pasta">
+        <div class="menu-grid">
+          <button type="button" class="menu-item" data-id="ps1" data-name="Καρμπονάρα" data-price="10.20"><span class="mi-emoji">🍝</span><div class="mi-body"><div class="mi-head"><h4>Καρμπονάρα</h4><span class="price">10,20€</span></div><p>Σπαγγέτι με μπέικον, αυγό, παρμεζάνα, φρεσκοτριμμένο πιπέρι.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="ps2" data-name="Μπολονέζ" data-price="9.80"><span class="mi-emoji">🍝</span><div class="mi-body"><div class="mi-head"><h4>Μπολονέζ</h4><span class="price">9,80€</span></div><p>Σάλτσα ντομάτας με μοσχαρίσιο κιμά, φρέσκα βότανα, παρμεζάνα.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="ps3" data-name="Πένες Αραμπιάτα" data-price="8.90"><span class="mi-emoji">🌶️</span><div class="mi-body"><div class="mi-head"><h4>Πένες Αραμπιάτα</h4><span class="price">8,90€</span></div><p>Ντομάτα, σκόρδο, καυτερή πιπεριά, φρέσκος βασιλικός.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="ps4" data-name="Λιγκουίνι Θαλασσινών" data-price="14.50"><span class="mi-emoji">🦐</span><div class="mi-body"><div class="mi-head"><h4>Λιγκουίνι Θαλασσινών</h4><span class="price">14,50€</span></div><p>Γαρίδες, μύδια, καλαμάρι σε σάλτσα ντομάτας με λευκό κρασί.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="ps5" data-name="Φετουτσίνι Κοτόπουλο" data-price="11.40"><span class="mi-emoji">🍗</span><div class="mi-body"><div class="mi-head"><h4>Φετουτσίνι Κοτόπουλο</h4><span class="price">11,40€</span></div><p>Λωρίδες κοτόπουλο σε κρεμώδη σάλτσα μανιταριών και παρμεζάνας.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="ps6" data-name="Νιόκι Γοργκοντζόλα" data-price="11.80"><span class="mi-emoji">🧀</span><div class="mi-body"><div class="mi-head"><h4>Νιόκι Γοργκοντζόλα</h4><span class="price">11,80€</span></div><p>Σπιτικά γνόκι σε κρεμώδη σάλτσα γοργκοντζόλα και καρυδιού.</p></div><span class="add-btn">+</span></button>
+        </div>
+      </div>
+
+      <div class="menu-panel" data-panel="sweets">
+        <div class="menu-grid">
+          <button type="button" class="menu-item" data-id="sw1" data-name="Σοκολατόπιτα" data-price="5.20"><span class="mi-emoji">🍫</span><div class="mi-body"><div class="mi-head"><h4>Σοκολατόπιτα</h4><span class="price">5,20€</span></div><p>Ζεστή σοκολατόπιτα με ρευστή καρδιά, παγωτό βανίλια.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="sw2" data-name="Cheesecake Φράουλα" data-price="5.50"><span class="mi-emoji">🍰</span><div class="mi-body"><div class="mi-head"><h4>Cheesecake Φράουλα</h4><span class="price">5,50€</span></div><p>Σπιτικό cheesecake με βάση μπισκότου και φρέσκες φράουλες.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="sw3" data-name="Λουκουμάδες" data-price="4.80"><span class="mi-emoji">🍩</span><div class="mi-body"><div class="mi-head"><h4>Λουκουμάδες</h4><span class="price">4,80€</span></div><p>Παραδοσιακοί λουκουμάδες με μέλι, καρύδι και κανέλα.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="sw4" data-name="Tiramisù" data-price="5.40"><span class="mi-emoji">☕</span><div class="mi-body"><div class="mi-head"><h4>Tiramisù</h4><span class="price">5,40€</span></div><p>Κλασικό ιταλικό με μασκαρπόνε, εσπρέσο και κακάο.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="sw5" data-name="Παγωτό (3 μπάλες)" data-price="4.50"><span class="mi-emoji">🍨</span><div class="mi-body"><div class="mi-head"><h4>Παγωτό (3 μπάλες)</h4><span class="price">4,50€</span></div><p>Διάλεξε από βανίλια, σοκολάτα, φράουλα, καϊμάκι, λεμόνι.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="sw6" data-name="Γλυκό του Κουταλιού" data-price="3.80"><span class="mi-emoji">🍯</span><div class="mi-body"><div class="mi-head"><h4>Γλυκό του Κουταλιού</h4><span class="price">3,80€</span></div><p>Ποικιλία της ημέρας με σπιτικό γιαούρτι και καρύδια.</p></div><span class="add-btn">+</span></button>
+        </div>
+      </div>
+
+      <div class="menu-panel" data-panel="drinks">
+        <div class="menu-grid">
+          <button type="button" class="menu-item" data-id="dr1" data-name="Coca-Cola 330ml" data-price="2.20"><span class="mi-emoji">🥤</span><div class="mi-body"><div class="mi-head"><h4>Coca-Cola 330ml</h4><span class="price">2,20€</span></div><p>Παγωμένη, σε κουτάκι ή γυάλινο μπουκάλι.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="dr2" data-name="Φυσικός Χυμός Πορτοκάλι" data-price="3.50"><span class="mi-emoji">🍊</span><div class="mi-body"><div class="mi-head"><h4>Φυσικός Χυμός Πορτοκάλι</h4><span class="price">3,50€</span></div><p>Φρεσκοστυμμένος, χωρίς ζάχαρη.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="dr3" data-name="Νερό 500ml" data-price="0.80"><span class="mi-emoji">💧</span><div class="mi-body"><div class="mi-head"><h4>Νερό 500ml</h4><span class="price">0,80€</span></div><p>Φυσικό μεταλλικό νερό.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="dr4" data-name="Μπύρα Άλφα 500ml" data-price="3.80"><span class="mi-emoji">🍺</span><div class="mi-body"><div class="mi-head"><h4>Μπύρα Άλφα 500ml</h4><span class="price">3,80€</span></div><p>Παγωμένη ελληνική lager.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="dr5" data-name="Κρασί Λευκό 500ml" data-price="6.50"><span class="mi-emoji">🍷</span><div class="mi-body"><div class="mi-head"><h4>Κρασί Λευκό 500ml</h4><span class="price">6,50€</span></div><p>Μοσχοφίλερο από ντόπιο αμπελώνα.</p></div><span class="add-btn">+</span></button>
+          <button type="button" class="menu-item" data-id="dr6" data-name="Ελληνικός Καφές" data-price="2.00"><span class="mi-emoji">☕</span><div class="mi-body"><div class="mi-head"><h4>Ελληνικός Καφές</h4><span class="price">2,00€</span></div><p>Παραδοσιακός, σε μπρίκι.</p></div><span class="add-btn">+</span></button>
+        </div>
+      </div>
+
+      <p class="menu-note">* Όλες οι τιμές περιλαμβάνουν ΦΠΑ. Πάτα οποιοδήποτε πιάτο για να το προσθέσεις στο καλάθι σου.</p>
+    </div>
+  </section>
+
+  <!-- ============ DELIVERY ============ -->
+  <section class="section delivery" id="delivery">
+    <div class="container two-col">
+      <div class="col-text">
+        <span class="eyebrow">Παραγγελία</span>
+        <h2>Delivery στην πόρτα σου</h2>
+        <p class="lead">Ζεστά, φρέσκα και έγκαιρα. Συμπλήρωσε τη φόρμα και θα σε καλέσουμε για επιβεβαίωση.</p>
+        <ul class="delivery-features">
+          <li><strong>Παράδοση 30'</strong> — μέσος χρόνος εντός πόλης</li>
+          <li><strong>Ελάχιστη παραγγελία</strong> — 8,00€</li>
+          <li><strong>Δωρεάν μεταφορικά</strong> — άνω των 18,00€</li>
+          <li><strong>Πληρωμή</strong> — μετρητά, κάρτα, online</li>
+        </ul>
+      </div>
+
+      <form class="form-card" id="delivery-form" novalidate>
+        <h3>Στείλε την παραγγελία σου</h3>
+
+        <div class="form-row">
+          <label>
+            <span>Ονοματεπώνυμο *</span>
+            <input type="text" name="name" required placeholder="π.χ. Μαρία Παπαδοπούλου" />
+          </label>
+          <label>
+            <span>Τηλέφωνο *</span>
+            <input type="tel" name="phone" required placeholder="69XXXXXXXX" />
+          </label>
+        </div>
+
+        <label>
+          <span>Διεύθυνση Παράδοσης *</span>
+          <input type="text" name="address" required placeholder="Οδός, αριθμός, ΤΚ, πόλη" />
+        </label>
+
+        <div class="form-row">
+          <label>
+            <span>Όροφος / Κουδούνι</span>
+            <input type="text" name="floor" placeholder="2ος / Παπαδόπουλος" />
+          </label>
+          <label>
+            <span>Ώρα Παράδοσης</span>
+            <select name="time">
+              <option value="asap">Όσο πιο γρήγορα γίνεται</option>
+              <option>Σε 30 λεπτά</option>
+              <option>Σε 1 ώρα</option>
+              <option>Σε 1.5 ώρα</option>
+              <option>Σε 2 ώρες</option>
+            </select>
+          </label>
+        </div>
+
+        <fieldset class="form-fieldset basket-field">
+          <legend>Το Καλάθι Σου</legend>
+          <div class="basket" id="basket">
+            <p class="basket-empty">Διάλεξε πιάτα από το <a href="#menu">μενού</a> για να ξεκινήσεις.</p>
+          </div>
+          <div class="basket-total" id="basket-total" hidden>
+            <span>Σύνολο</span>
+            <strong id="basket-total-amount">0,00€</strong>
+          </div>
+        </fieldset>
+
+        <label>
+          <span>Επιπλέον Σχόλια Παραγγελίας</span>
+          <textarea name="details" rows="2" placeholder="π.χ. χωρίς κρεμμύδι στην πίτσα, extra τζατζίκι..."></textarea>
+        </label>
+
+        <div class="form-row">
+          <label>
+            <span>Τρόπος Πληρωμής</span>
+            <select name="payment">
+              <option>Μετρητά στον διανομέα</option>
+              <option>Κάρτα στον διανομέα</option>
+              <option>Online πληρωμή</option>
+            </select>
+          </label>
+          <label>
+            <span>Σχόλια</span>
+            <input type="text" name="notes" placeholder="π.χ. χωρίς κρεμμύδι" />
+          </label>
+        </div>
+
+        <label class="check check-terms">
+          <input type="checkbox" required />
+          <span>Συμφωνώ με τους <a href="#">όρους χρήσης</a> και την επεξεργασία των στοιχείων μου.</span>
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-block">Αποστολή Παραγγελίας</button>
+        <p class="form-success" id="delivery-success" hidden>Η παραγγελία σου στάλθηκε! Θα σε καλέσουμε στο 5' για επιβεβαίωση.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Στιγμές</span>
+        <h2>Από τη Γωνιά Μας</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="g-item g1"><span>Πίτσα Σπέσιαλ</span></div>
+        <div class="g-item g2"><span>Καλαμάκια στα κάρβουνα</span></div>
+        <div class="g-item g3"><span>Η αυλή μας</span></div>
+        <div class="g-item g4"><span>Σπιτικά γλυκά</span></div>
+        <div class="g-item g5"><span>Παρέες &amp; γέλιο</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Λένε για εμάς</span>
+        <h2>Οι πελάτες μας</h2>
+      </div>
+      <div class="t-grid">
+        <blockquote class="t-card">
+          <div class="stars">★★★★★</div>
+          <p>«Η καλύτερη πίτσα της πόλης. Η ζύμη ξεχωρίζει και τα υλικά είναι πάντα φρέσκα.»</p>
+          <footer>— Νίκος Δ.</footer>
+        </blockquote>
+        <blockquote class="t-card">
+          <div class="stars">★★★★★</div>
+          <p>«Παίρνουμε καλαμάκια κάθε Παρασκευή. Δεν μας έχουν απογοητεύσει ποτέ. Φιλικοί άνθρωποι, σωστή δουλειά.»</p>
+          <footer>— Έλενα Μ.</footer>
+        </blockquote>
+        <blockquote class="t-card">
+          <div class="stars">★★★★★</div>
+          <p>«Κάναμε τα γενέθλια του γιου μας στην αυλή. Όλα τέλεια — από το φαγητό μέχρι την εξυπηρέτηση.»</p>
+          <footer>— Οικογένεια Παπαδοπούλου</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / LOCATION ============ -->
+  <section class="section contact" id="contact">
+    <div class="container two-col">
+      <div class="col-text">
+        <span class="eyebrow">Επικοινωνία</span>
+        <h2>Έλα να μας βρεις</h2>
+        <p class="lead">Στην πλατεία του χωριού, στο γαλάζιο κτίριο με την κεραμοσκεπή.</p>
+
+        <div class="contact-blocks">
+          <div class="cb">
+            <div class="cb-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Διεύθυνση</h4>
+              <p>Πλατεία Αγίου Γεωργίου 12<br />Τ.Κ. 19200, Αττική</p>
+            </div>
+          </div>
+
+          <div class="cb">
+            <div class="cb-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+            </div>
+            <div>
+              <h4>Τηλέφωνο</h4>
+              <p><a href="tel:+302105550144">+30 210 555 0144</a><br /><a href="tel:+306941234567">+30 694 123 4567</a></p>
+            </div>
+          </div>
+
+          <div class="cb">
+            <div class="cb-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:hello@meraki-giotannas.gr">hello@meraki-giotannas.gr</a></p>
+            </div>
+          </div>
+
+          <div class="cb">
+            <div class="cb-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <div>
+              <h4>Ωράριο</h4>
+              <p>Τρ — Πε: 12:00 — 24:00<br />Πα — Σα: 12:00 — 01:30<br />Κυρ: 12:00 — 23:00 · Δευ: Κλειστά</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7c0-1 .5-2 2-2h2V1h-3c-3 0-5 2-5 5v4H6v4h3v8h4z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3v3a4 4 0 0 0 4 4v3a7 7 0 0 1-4-1.3V16a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3V3h3z"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 12a8 8 0 1 1-15-4l-1 5 5-1a8 8 0 0 0 11 0zM9 8c.5-.5 1.5 0 2 1 .5 1-.5 1.5 0 2 1 1 2 2 3 2 .5.5 1-.5 2 0 1 .5 1.5 1.5 1 2-1 1-3 1-5 0-3-1-5-3-6-6-1-2-1-4 0-5z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <iframe
+          title="Χάρτης τοποθεσίας"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=23.7261%2C37.9733%2C23.7361%2C37.9833&amp;layer=mapnik"
+          loading="lazy"
+        ></iframe>
+        <a class="map-link" href="https://www.openstreetmap.org/?mlat=37.9783&amp;mlon=23.7311#map=16/37.9783/23.7311" target="_blank" rel="noopener">Άνοιγμα σε Χάρτη ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESERVATION ============ -->
+  <section class="section reservation" id="reservation">
+    <div class="container two-col reverse">
+      <form class="form-card" id="reservation-form" novalidate>
+        <h3>Κράτηση Τραπεζιού</h3>
+
+        <div class="form-row">
+          <label>
+            <span>Ονοματεπώνυμο *</span>
+            <input type="text" name="name" required placeholder="Όνομα κράτησης" />
+          </label>
+          <label>
+            <span>Τηλέφωνο *</span>
+            <input type="tel" name="phone" required placeholder="69XXXXXXXX" />
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="email@example.com" />
+          </label>
+          <label>
+            <span>Άτομα *</span>
+            <select name="people" required>
+              <option value="">Επιλογή...</option>
+              <option>1 άτομο</option><option>2 άτομα</option><option>3 άτομα</option>
+              <option>4 άτομα</option><option>5 άτομα</option><option>6 άτομα</option>
+              <option>7 άτομα</option><option>8 άτομα</option><option>9+ άτομα</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Ημερομηνία *</span>
+            <input type="date" name="date" required />
+          </label>
+          <label>
+            <span>Ώρα *</span>
+            <select name="time" required>
+              <option value="">Επιλογή...</option>
+              <option>12:30</option><option>13:00</option><option>13:30</option>
+              <option>14:00</option><option>14:30</option><option>15:00</option>
+              <option>19:00</option><option>19:30</option><option>20:00</option>
+              <option>20:30</option><option>21:00</option><option>21:30</option>
+              <option>22:00</option><option>22:30</option><option>23:00</option>
+            </select>
+          </label>
+        </div>
+
+        <fieldset class="form-fieldset">
+          <legend>Προτίμηση Καθίσματος</legend>
+          <div class="radios">
+            <label class="radio"><input type="radio" name="seating" value="indoor" checked /> <span>Εσωτερικός χώρος</span></label>
+            <label class="radio"><input type="radio" name="seating" value="outdoor" /> <span>Αυλή / Κήπος</span></label>
+            <label class="radio"><input type="radio" name="seating" value="balcony" /> <span>Μπαλκόνι</span></label>
+            <label class="radio"><input type="radio" name="seating" value="any" /> <span>Όπου υπάρχει</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-fieldset">
+          <legend>Ειδική Περίσταση</legend>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="occ" value="birthday" /> <span>Γενέθλια</span></label>
+            <label class="check"><input type="checkbox" name="occ" value="anniversary" /> <span>Επέτειος</span></label>
+            <label class="check"><input type="checkbox" name="occ" value="business" /> <span>Επαγγελματικό</span></label>
+            <label class="check"><input type="checkbox" name="occ" value="family" /> <span>Οικογενειακό</span></label>
+          </div>
+        </fieldset>
+
+        <label>
+          <span>Σχόλια / Ειδικά αιτήματα</span>
+          <textarea name="notes" rows="3" placeholder="π.χ. αλλεργίες, παιδικό κάθισμα, τούρτα..."></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-block">Επιβεβαίωση Κράτησης</button>
+        <p class="form-success" id="reservation-success" hidden>Η κράτησή σου καταχωρήθηκε! Θα σε καλέσουμε για επιβεβαίωση εντός 30'.</p>
+      </form>
+
+      <div class="col-text">
+        <span class="eyebrow">Κράτηση</span>
+        <h2>Κλείσε το τραπέζι σου</h2>
+        <p class="lead">Από οικογενειακό μεσημεριανό μέχρι ρομαντικό δείπνο — εμείς φροντίζουμε τα υπόλοιπα.</p>
+        <div class="hours">
+          <h4>Ωράριο Λειτουργίας</h4>
+          <ul>
+            <li><span>Δευτέρα</span><strong>Κλειστά</strong></li>
+            <li><span>Τρίτη — Πέμπτη</span><strong>12:00 — 24:00</strong></li>
+            <li><span>Παρασκευή — Σάββατο</span><strong>12:00 — 01:30</strong></li>
+            <li><span>Κυριακή</span><strong>12:00 — 23:00</strong></li>
+          </ul>
+        </div>
+        <p class="small">Για ομάδες άνω των 10 ατόμων, παρακαλούμε καλέστε μας απευθείας στο <a href="tel:+302105550144">+30 210 555 0144</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="news-inner">
+        <div>
+          <h3>Μείνε ενημερωμένος</h3>
+          <p>Νέα πιάτα, εποχιακές προσφορές και κλειστές εκδηλώσεις — ένα email τον μήνα, χωρίς spam.</p>
+        </div>
+        <form class="news-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('.news-ok').hidden=false;">
+          <input type="email" required placeholder="Το email σου" />
+          <button class="btn btn-dark" type="submit">Εγγραφή</button>
+          <span class="news-ok" hidden>Ευχαριστούμε! ✓</span>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="logo.svg" alt="" class="footer-logo" />
+        <p class="footer-tag">Παραδοσιακή φιλοξενία &amp; σπιτικές γεύσεις από το 2008.</p>
+      </div>
+      <div>
+        <h5>Σύνδεσμοι</h5>
+        <a href="#about">Το Μαγαζί</a>
+        <a href="#menu">Μενού</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#reservation">Κράτηση</a>
+      </div>
+      <div>
+        <h5>Επικοινωνία</h5>
+        <a href="tel:+302105550144">+30 210 555 0144</a>
+        <a href="mailto:hello@meraki-giotannas.gr">hello@meraki-giotannas.gr</a>
+        <a href="#contact">Πλατεία Αγίου Γεωργίου 12</a>
+      </div>
+      <div>
+        <h5>Νομικά</h5>
+        <a href="#">Όροι Χρήσης</a>
+        <a href="#">Πολιτική Απορρήτου</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Το μεράκι της Γιωτάννας. Όλα τα δικαιώματα διατηρούνται.</span>
+      <span>Φτιαγμένο με μεράκι ❤</span>
+    </div>
+  </footer>
+
+  <a href="#delivery" class="float-cta" aria-label="Παραγγελία">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h13l1 5h4v5h-2a2 2 0 1 1-4 0H10a2 2 0 1 1-4 0H4V7z"/></svg>
+    Delivery
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
