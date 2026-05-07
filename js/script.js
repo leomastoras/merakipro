@@ -462,6 +462,54 @@ document.getElementById('btn-clear-booking').addEventListener('click', () => {
   document.getElementById('bookingStatus').textContent = '';
 });
 
+/* ---------- Featured dish of the week ---------- */
+(function () {
+  const dishSection = document.getElementById('dish-of-week');
+  if (!dishSection) return;
+
+  const ingrEls = dishSection.querySelectorAll('#dishIngredients li');
+  const featuredExcluded = new Set();
+
+  const FEATURED_DISH = {
+    icon: '🍕',
+    name: 'Πίτσα Παρθένος',
+    price: 11.90,
+    ing: Array.from(ingrEls).map(li => li.dataset.ing),
+  };
+
+  function toggleIngredient(li) {
+    const ing = li.dataset.ing;
+    if (featuredExcluded.has(ing)) {
+      featuredExcluded.delete(ing);
+      li.classList.remove('excluded');
+    } else {
+      featuredExcluded.add(ing);
+      li.classList.add('excluded');
+    }
+  }
+
+  ingrEls.forEach(li => {
+    li.addEventListener('click', () => toggleIngredient(li));
+    li.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleIngredient(li);
+      }
+    });
+  });
+
+  const orderBtn = dishSection.querySelector('.dish-cta a[href="#delivery"]');
+  if (orderBtn) {
+    orderBtn.addEventListener('click', e => {
+      e.preventDefault();
+      addToOrder(FEATURED_DISH, 1, Array.from(featuredExcluded));
+      document.getElementById('delivery').scrollIntoView({ behavior: 'smooth' });
+      orderListEl.classList.add('flash');
+      setTimeout(() => orderListEl.classList.remove('flash'), 800);
+    });
+  }
+})();
+
 /* ---------- Footer year ---------- */
 document.getElementById('year').textContent = new Date().getFullYear();
 
