@@ -60,7 +60,7 @@ const MENU = {
   ],
 
   drinks: [
-    { icon: '🥤', name: 'Αναψυκτικά',            price: 2.00, desc: 'Coca-Cola, Sprite, Fanta, Schweppes — επιλογή σε φιάλη 330ml.', ing: ['Coca-Cola','Sprite','Fanta'] },
+    { icon: '🥤', name: 'Αναψυκτικά',            price: 2.00, desc: 'Coca-Cola, Sprite, Fanta — επιλογή σε φιάλη 330ml.', ing: ['Coca-Cola','Sprite','Fanta'] },
     { icon: '💧', name: 'Εμφιαλωμένο νερό',       price: 0.80, desc: 'Φυσικό μεταλλικό νερό 500ml ή 1L.', ing: ['Φυσικό','500ml','1L'] },
     { icon: '✨', name: 'Ανθρακούχο νερό',        price: 1.50, desc: 'Δροσιστικό ανθρακούχο με λεμόνι ή φυσικό.', ing: ['Ανθρακούχο','Λεμόνι'] },
     { icon: '🧃', name: 'Φυσικός χυμός',          price: 3.00, desc: 'Φρεσκοστυμμένος χυμός πορτοκάλι ή ανάμεικτος εποχής.', ing: ['Πορτοκάλι','Ανάμεικτος','Λεμόνι'] },
