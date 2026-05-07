@@ -303,8 +303,8 @@ deliveryForm.addEventListener('submit', e => {
   deliveryStatus.textContent = '⏳ Αποστολή…';
   setTimeout(() => {
     deliveryStatus.textContent = '✓ Λάβαμε την παραγγελία σας — θα σας καλέσουμε σύντομα!';
-    deliveryForm.reset();
-    orderItems = [];
+    /*deliveryForm.reset();
+    orderItems = [];*/
     renderOrderList();
   }, 900);
 });
@@ -436,14 +436,14 @@ document.getElementById('btn-delivery').addEventListener('click',() => {
             'name': $('#name').val(),
             'title': 'ΠΑΡΑΓΓΕΛΙΑ',
             'email': '-',
-            'message': $('#name').val() + '\n\n'
-                    + $('#tel').val() + '\n\n'
-                    + $('#address').val() + '\n\n'
-                    + $('#floor').val() + '\n\n'
-                    + $('#time').val() + '\n\n'
-                    + $('#payment').val() + '\n\n'
-                    + $('#orderList').text() + '\n\n'
-                    + $('#notes').val() + '\n\n',
+            'message': 'Όνομα:' + '\n' + $('#name').val() + '\n\n'
+                    + 'Τηλέφωνο:' + '\n' + $('#tel').val() + '\n\n'
+                    + 'Διεύθυνση:' + '\n' + $('#address').val() + '\n\n'
+                    + 'Όροφος:' + '\n' + $('#floor').val() + '\n\n'
+                    + 'Ώρα:' + '\n' + $('#time').val() + '\n\n'
+                    + 'Πληρωμή:' + '\n' + $('#payment').val() + '\n\n'
+                    + 'Λίστα:' + '\n' + $('#orderList').text() + '\n\n'
+                    + 'Σημειώσεις:' + '\n' +$('#notes').val() + '\n\n',
             'time': new Date()
         }
     };
