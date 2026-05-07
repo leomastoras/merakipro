@@ -11,8 +11,8 @@ const MENU = {
     { icon: '🍕', name: 'Σπέσιαλ',           price: 9.00, desc: 'Η αγαπημένη μας πίτσα με ζαμπόν, μπέικον, μανιτάρια και πιπεριά.', ing: ['Ζαμπόν','Μπέικον','Μανιτάρια','Πιπεριά','Μοτσαρέλα'] },
     { icon: '🌶️', name: 'Διάβολος',          price: 9.50, desc: 'Πικάντικη με σαλάμι αέρος, καυτερή πιπεριά και κρεμμύδι.', ing: ['Σαλάμι','Καυτερή πιπεριά','Κρεμμύδι','Μοτσαρέλα'] },
     { icon: '🥬', name: 'Λαχανικών',          price: 8.50, desc: 'Με μανιτάρια, πιπεριές, ντομάτα, ελιές και κρεμμύδι.', ing: ['Μανιτάρια','Πιπεριές','Ντομάτα','Ελιές','Κρεμμύδι'] },
-    { icon: '🐟', name: 'Θαλασσινών',         price: 11.00, desc: 'Με γαρίδες, μύδια, καλαμάρι και άρωμα λεμονιού.', ing: ['Γαρίδες','Μύδια','Καλαμάρι','Λεμόνι'] },
-    { icon: '🧀', name: 'Τέσσερα τυριά',      price: 10.00, desc: 'Ένας ύμνος στο τυρί: μοτσαρέλα, παρμεζάνα, γκοργκοντζόλα και γραβιέρα.', ing: ['Μοτσαρέλα','Παρμεζάνα','Γκοργκοντζόλα','Γραβιέρα'] },
+    { icon: '🐟', name: 'Θαλασσινών',         price: 9.50, desc: 'Με γαρίδες, μύδια, καλαμάρι και άρωμα λεμονιού.', ing: ['Γαρίδες','Μύδια','Καλαμάρι','Λεμόνι'] },
+    { icon: '🧀', name: 'Τέσσερα τυριά',      price: 9.00, desc: 'Ένας ύμνος στο τυρί: μοτσαρέλα, παρμεζάνα, γκοργκοντζόλα και γραβιέρα.', ing: ['Μοτσαρέλα','Παρμεζάνα','Γκοργκοντζόλα','Γραβιέρα'] },
   ],
 
   burgers: [
@@ -417,6 +417,22 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape')      closeLightbox();
   if (e.key === 'ArrowLeft')   navLightbox(-1);
   if (e.key === 'ArrowRight')  navLightbox(1);
+});
+
+/* ---------- Clear delivery form ---------- */
+document.getElementById('btn-clear-delivery').addEventListener('click', () => {
+  if (!window.confirm('Καθαρισμός όλων των πεδίων και της παραγγελίας;')) return;
+  deliveryForm.reset();
+  orderItems = [];
+  renderOrderList();
+  deliveryStatus.textContent = '';
+});
+
+/* ---------- Clear booking form ---------- */
+document.getElementById('btn-clear-booking').addEventListener('click', () => {
+  if (!window.confirm('Καθαρισμός όλων των πεδίων;')) return;
+  document.getElementById('bookingForm').reset();
+  document.getElementById('bookingStatus').textContent = '';
 });
 
 /* ---------- Footer year ---------- */

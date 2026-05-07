@@ -103,6 +103,18 @@ img { max-width: 100%; display: block; }
   color: var(--blue-deep);
   transform: translateY(-2px);
 }
+.btn-outline {
+  background: transparent;
+  color: var(--terracotta);
+  border-color: var(--terracotta);
+}
+.btn-outline:hover {
+  background: var(--terracotta);
+  color: var(--cream);
+  border-color: var(--terracotta);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
 
 /* ===== NAV ===== */
 .nav {
