@@ -1,5 +1,5 @@
 /* Το μεράκι της Γιωτάννας — Service Worker */
-const CACHE_VERSION = 'meraki-v1';
+const CACHE_VERSION = 'meraki-v2';
 const PRECACHE_URLS = [
   './',
   './index.html',
@@ -9,6 +9,9 @@ const PRECACHE_URLS = [
   './manifest.webmanifest',
   './img/logo.svg',
   './img/logo.png',
+  './img/icon-192.png',
+  './img/icon-512.png',
+  './img/icon-maskable-512.png',
   './img/1.jpg',
   './img/2.jpg',
   './img/3.jpg',
