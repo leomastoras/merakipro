@@ -282,7 +282,7 @@ function bindFormDemo(formId, statusId, msg) {
     status.textContent = '⏳ Αποστολή…';
     setTimeout(() => {
       status.textContent = msg;
-      form.reset();
+      /*form.reset();*/
     }, 900);
   });
 }

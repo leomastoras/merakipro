@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css" blocking="render"/>
+<link rel="stylesheet" href="css/styles.css#1" blocking="render"/>
 </head>
 <body>
 
@@ -113,13 +113,13 @@
 
   <!-- Category tabs -->
   <div class="menu-tabs" role="tablist">
-    <button class="tab active" data-cat="pizza">🍕 Πίτσες</button>
-    <button class="tab" data-cat="burgers">🍔 Burgers</button>
-    <button class="tab" data-cat="sticks">🍢 Καλαμάκια</button>
-    <button class="tab" data-cat="club">🥪 Club</button>
-    <button class="tab" data-cat="pasta">🍝 Ζυμαρικά</button>
-    <button class="tab" data-cat="sweets">🍰 Γλυκά</button>
-    <button class="tab" data-cat="drinks">🥤 Ποτά</button>
+    <button class="tab active" role="tab" data-cat="pizza">🍕 Πίτσες</button>
+    <button class="tab" role="tab" data-cat="burgers">🍔 Burgers</button>
+    <button class="tab" role="tab" data-cat="sticks">🍢 Καλαμάκια</button>
+    <button class="tab" role="tab" data-cat="club">🥪 Club</button>
+    <button class="tab" role="tab" data-cat="pasta">🍝 Ζυμαρικά</button>
+    <button class="tab" role="tab" data-cat="sweets">🍰 Γλυκά</button>
+    <button class="tab" role="tab" data-cat="drinks">🥤 Ποτά</button>
   </div>
 
   <div class="menu-grid" id="menuGrid"><!-- filled by JS --></div>
@@ -324,10 +324,10 @@
       <div class="loc-block socials">
         <h3>🤝 Ακολουθήστε μας</h3>
         <div class="social-row">
-          <a href="#" aria-label="Facebook"><img src="img/fb.png" style="width:40px"></a>
-          <a href="#" aria-label="Instagram"><img src="img/ig.png" style="width:40px"></a>
-          <a href="#" aria-label="TikTok"><img src="img/tt.png" style="width:40px"></a>
-          <a href="#" aria-label="Tripadvisor"><img src="img/ta.png" style="width:40px"></a>
+          <a href="#" aria-label="Facebook"><img src="img/fb.png" alt="FB"></a>
+          <a href="#" aria-label="Instagram"><img src="img/ig.png" alt="IG"></a>
+          <a href="#" aria-label="TikTok"><img src="img/tt.png" alt="TT"></a>
+          <a href="#" aria-label="Tripadvisor"><img src="img/ta.png" alt="TA"></a>
         </div>
       </div>
     </div>
@@ -484,11 +484,52 @@
   </div>
 </section>
 
+<!-- ========== FAQ ========== -->
+<section id="faq" class="section section-alt">
+  <div class="section-head">
+    <span class="eyebrow">Συχνές ερωτήσεις</span>
+    <h2>Τα ρωτάτε συχνά</h2>
+    <p class="lead">Σύντομες απαντήσεις στα πιο συχνά ερωτήματα για το delivery, τις κρατήσεις και τις εκδηλώσεις μας.</p>
+  </div>
+
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary><span class="faq-icon">🛵</span><span class="faq-q">Πόσο χρόνο κάνει το delivery;</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>Στις περισσότερες παραγγελίες παραδίδουμε σε 30–45 λεπτά. Τις ώρες αιχμής (Παρασκευή & Σάββατο βράδυ) μπορεί να φτάσει τα 60 λεπτά — σας ενημερώνουμε πάντα κατά την επιβεβαίωση.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-icon">🥗</span><span class="faq-q">Έχετε χορτοφαγικές & vegan επιλογές;</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>Ναι. Από μαργαρίτες και vegan burgers, μέχρι ζυμαρικά και φρέσκες σαλάτες — έχουμε πιάτα και για χορτοφάγους και για vegan. Ρωτήστε μας ή σημειώστε το στις «Σημειώσεις» της παραγγελίας.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-icon">👨‍👩‍👧</span><span class="faq-q">Δέχεστε κρατήσεις για μεγάλες ομάδες;</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>Φιλοξενούμε τραπέζια έως 30 ατόμων. Για 9+ άτομα συνιστούμε να επικοινωνήσετε τηλεφωνικά τουλάχιστον 24 ώρες πριν, ώστε να σας ετοιμάσουμε ξεχωριστή γωνιά.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-icon">🎂</span><span class="faq-q">Οργανώνετε ιδιωτικές εκδηλώσεις;</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>Ναι — βαφτίσια, γενέθλια, αρραβώνες και εταιρικά events με προσωπικό μενού. Στείλτε email στο <a href="mailto:hello@meraki-giotannas.gr">hello@meraki-giotannas.gr</a> και θα σας προτείνουμε ολοκληρωμένο πακέτο.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-icon">🌾</span><span class="faq-q">Υπάρχουν πιάτα χωρίς γλουτένη;</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>Διαθέτουμε ζύμη πίτσας χωρίς γλουτένη και αρκετά πιάτα είναι φυσικά gluten-free. Εξυπηρετούμε σε ξεχωριστή επιφάνεια για να αποφύγουμε επιμολύνσεις — ενημερώστε μας πριν παραγγείλετε.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-icon">🅿️</span><span class="faq-q">Υπάρχει πάρκινγκ κοντά;</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+      <p>Ναι, υπάρχει δημόσιος χώρος στάθμευσης 50 μέτρα από το μαγαζί καθώς και ελεύθερες θέσεις στους γύρω δρόμους. Τα Σαββατοκύριακα προτείνουμε να έρθετε λίγο νωρίτερα.</p>
+    </details>
+  </div>
+</section>
+
 <!-- ========== FOOTER ========== -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-col">
-      <img src="img/logo.svg" width="85%">
+      <img src="img/logo.svg" width="85%" alt="Logo">
       <p class="brand-line">Το μεράκι της Γιωτάννας</p>
       <p class="muted">Σπιτική γεύση από το 2026.</p>
     </div>
