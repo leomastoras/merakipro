@@ -353,22 +353,22 @@
     <div class="form-row">
       <label>
         <span><span class="form-icon">👤</span> Ονοματεπώνυμο *</span>
-        <input type="text" name="name" required placeholder="Μαρία Παπαδοπούλου">
+        <input id="bookname" type="text" name="name" required placeholder="Μαρία Παπαδοπούλου">
       </label>
       <label>
         <span><span class="form-icon">📞</span> Τηλέφωνο *</span>
-        <input type="tel" name="phone" required placeholder="69xx xxx xxx">
+        <input id="booktel" type="tel" name="phone" required placeholder="69xx xxx xxx">
       </label>
     </div>
 
     <div class="form-row">
       <label>
         <span><span class="form-icon">✉️</span> Email</span>
-        <input type="email" name="email" placeholder="προαιρετικό">
+        <input id="bookemail" type="email" name="email" placeholder="προαιρετικό">
       </label>
       <label>
         <span><span class="form-icon">👥</span> Άτομα *</span>
-        <select name="people" required>
+        <select id="bookpeople" name="people" required>
           <option>1</option><option>2</option><option>3</option><option>4</option>
           <option>5</option><option>6</option><option>7</option><option>8</option>
           <option>9 ή περισσότερα</option>
@@ -379,11 +379,11 @@
     <div class="form-row">
       <label>
         <span><span class="form-icon">📅</span> Ημερομηνία *</span>
-        <input type="date" name="date" required>
+        <input id="bookdate" type="date" name="date" required>
       </label>
       <label>
         <span><span class="form-icon">🕐</span> Ώρα *</span>
-        <select name="time" required>
+        <select id="booktime" name="time" required>
           <option value="">— Επιλέξτε —</option>
           <option>13:00</option><option>13:30</option><option>14:00</option>
           <option>14:30</option><option>15:00</option>
@@ -397,7 +397,7 @@
     <div class="form-row">
       <label>
         <span><span class="form-icon">🪑</span> Προτίμηση καθίσματος</span>
-        <select name="seating">
+        <select id="bookseating" name="seating">
           <option>Καμία προτίμηση</option>
           <option>Εσωτερικός χώρος</option>
           <option>Αυλή / εξωτερικό</option>
@@ -407,7 +407,7 @@
       </label>
       <label>
         <span><span class="form-icon">🥂</span> Περίσταση</span>
-        <select name="occasion">
+        <select id="bookoccasion" name="occasion">
           <option>Καθημερινό</option>
           <option>Γενέθλια</option>
           <option>Επέτειος</option>
@@ -419,11 +419,11 @@
 
     <label>
       <span><span class="form-icon">✏️</span> Σημειώσεις</span>
-      <textarea name="notes" rows="3" placeholder="Αλλεργίες, παιδιά, ειδικά αιτήματα…"></textarea>
+      <textarea id="booknotes" name="notes" rows="3" placeholder="Αλλεργίες, παιδιά, ειδικά αιτήματα…"></textarea>
     </label>
 
     <div class="form-actions">
-      <button type="submit" class="btn btn-primary">✅ Επιβεβαίωση κράτησης</button>
+      <button id="btn-booktable" type="submit" class="btn btn-primary">✅ Επιβεβαίωση κράτησης</button>
       <button id="btn-clear-booking" type="button" class="btn btn-outline">🧹 Καθαρισμός φόρμας</button>
       <span class="form-status" id="bookingStatus"></span>
     </div>

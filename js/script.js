@@ -477,3 +477,44 @@ document.getElementById('btn-delivery').addEventListener('click',() => {
   }
   // code fragment
 });
+
+document.getElementById('btn-booktable').addEventListener('click',() => {
+  // code fragment
+
+  
+  if(window.confirm("Αποστολή στοιχείων - είστε σίγουροι?")) {
+
+    var data = {
+        service_id: 'service_p3bwchp',
+        template_id: 'template_xp2dwo5',
+        user_id: 'A8ztVkz9lM3l1oYlQ',
+        template_params: {
+            'name': $('#name').val(),
+            'title': 'ΚΡΑΤΗΣΗ',
+            'email': '-',
+            'message': 'Όνομα:' + '\n' + $('#bookname').val() + '\n\n'
+                    + 'Τηλέφωνο:' + '\n' + $('#booktel').val() + '\n\n'
+                    + 'Email:' + '\n' + $('#bookemail').val() + '\n\n'
+                    + 'Άτομα:' + '\n' + $('#bookpeople').val() + '\n\n'
+                    + 'Ημερομηνία:' + '\n' + $('#bookdate').val() + '\n\n'
+                    + 'Ώρα:' + '\n' + $('#booktime').val() + '\n\n'
+                    + 'Προτίμηση καθίσματος:' + '\n' +$('#bookseating').val() + '\n\n'
+                    + 'Περίσταση:' + '\n' +$('#bookoccasion').val() + '\n\n'
+                    + 'Σημειώσεις:' + '\n' +$('#booknotes').val() + '\n\n',
+            'time': new Date()
+        }
+    };
+
+    
+    $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json'
+    }).done(function() {
+        alert('H κράτηση σας καταχωρήθηκε επιτυχώς!');
+    }).fail(function(error) {
+        alert('Oops... ' + JSON.stringify(error));
+    });
+  }
+  // code fragment
+});
