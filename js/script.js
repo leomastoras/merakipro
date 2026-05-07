@@ -331,8 +331,19 @@ const INFO_CONTENT = {
 
 const infoDetail = document.getElementById('infoDetail');
 const infoCards  = document.querySelectorAll('#infoCards .info-card');
+const infoMobileMQ = window.matchMedia('(max-width: 900px)');
 
-function selectInfoCard(card) {
+/* Inject the detail HTML inline into each card so it can be revealed
+   collapsibly on mobile. Hidden via CSS on desktop. */
+infoCards.forEach(card => {
+  const key = card.dataset.card;
+  const detail = document.createElement('div');
+  detail.className = 'info-card-detail';
+  detail.innerHTML = INFO_CONTENT[key] || '';
+  card.appendChild(detail);
+});
+
+function selectInfoCardDesktop(card) {
   if (card.classList.contains('active')) return;
   infoCards.forEach(c => c.classList.remove('active'));
   card.classList.add('active');
@@ -344,17 +355,32 @@ function selectInfoCard(card) {
   }, 200);
 }
 
+function toggleInfoCardMobile(card) {
+  card.classList.toggle('expanded');
+}
+
+function handleInfoCard(card) {
+  if (infoMobileMQ.matches) toggleInfoCardMobile(card);
+  else                      selectInfoCardDesktop(card);
+}
+
 infoCards.forEach(card => {
-  card.addEventListener('click', () => selectInfoCard(card));
+  card.addEventListener('click', () => handleInfoCard(card));
   card.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      selectInfoCard(card);
+      handleInfoCard(card);
     }
   });
 });
 
-/* initialise with the active card's content */
+/* When the viewport crosses the breakpoint, clear the other mode's state
+   so the UI doesn't show stale expansion / selection. */
+infoMobileMQ.addEventListener('change', () => {
+  infoCards.forEach(c => c.classList.remove('expanded'));
+});
+
+/* initialise with the active card's content for the desktop panel */
 const initial = document.querySelector('#infoCards .info-card.active') || infoCards[0];
 if (initial) infoDetail.innerHTML = INFO_CONTENT[initial.dataset.card] || '';
 

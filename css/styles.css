@@ -830,9 +830,63 @@ h3 {
   transition: opacity .25s ease, transform .25s ease;
 }
 
+/* Inline detail collapsed inside each card — desktop hides this entirely
+   and uses the shared .info-detail panel instead. */
+.info-card-detail { display: none; }
+
 @media (max-width: 900px) {
   .info-cards { grid-template-columns: repeat(2, 1fr); }
-  .info-card.active::after { display: none; }
+
+  /* Hide the shared detail panel on mobile — content lives in each card. */
+  .info-detail { display: none; }
+
+  /* Make room for a chevron column. */
+  .info-card { grid-template-columns: auto 1fr auto; }
+
+  /* Replace the desktop "active" arrow with a chevron toggle. */
+  .info-card::after {
+    content: '⌄';
+    position: static;
+    display: block;
+    grid-column: 3;
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    transform: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--terracotta);
+    align-self: center;
+    transition: transform .3s ease;
+  }
+  .info-card.active::after { display: block; }
+  .info-card.expanded::after { transform: rotate(180deg); }
+
+  /* The injected inline detail, shown only on mobile. */
+  .info-card-detail {
+    display: block;
+    grid-column: 1 / -1;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .35s ease, opacity .25s ease, margin-top .25s ease;
+  }
+  .info-card.expanded .info-card-detail {
+    max-height: 800px;
+    opacity: 1;
+    margin-top: 12px;
+  }
+  .info-card-detail p {
+    margin: 0 0 12px;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .info-card-detail p:last-child { margin-bottom: 0; }
+
+  /* Avoid the lift-on-hover on touch screens — feels janky when expanding. */
+  .info-card:hover { transform: none; }
 }
 @media (max-width: 520px) {
   .info-cards { grid-template-columns: 1fr; }
