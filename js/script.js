@@ -357,6 +357,7 @@ function selectInfoCardDesktop(card) {
 
 function toggleInfoCardMobile(card) {
   card.classList.toggle('expanded');
+  card.classList.remove('active');
 }
 
 function handleInfoCard(card) {

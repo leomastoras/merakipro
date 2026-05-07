@@ -253,39 +253,39 @@
 
   <div class="gallery-grid">
     <figure class="gallery-item gallery-item--big">
-      <img src="img/1c.jpg" alt="Στιγμή 1">
+      <img src="img/1.jpg" alt="Στιγμή 1">
       <figcaption>Φρέσκα από τον ξυλόφουρνο</figcaption>
     </figure>
     <figure class="gallery-item">
-      <img src="img/2c.jpg" alt="Στιγμή 2">
+      <img src="img/2.jpg" alt="Στιγμή 2">
       <figcaption>Με μεράκι σε κάθε πιάτο</figcaption>
     </figure>
     <figure class="gallery-item">
-      <img src="img/3c.jpg" alt="Στιγμή 3">
+      <img src="img/3.jpg" alt="Στιγμή 3">
       <figcaption>Η αυλή μας στην πλατεία</figcaption>
     </figure>
     <figure class="gallery-item">
-      <img src="img/4c.jpg" alt="Στιγμή 4">
+      <img src="img/4.jpg" alt="Στιγμή 4">
       <figcaption>Γλυκές χειροποίητες απολαύσεις</figcaption>
     </figure>
     <figure class="gallery-item">
-      <img src="img/5c.jpg" alt="Στιγμή 5">
+      <img src="img/5.jpg" alt="Στιγμή 5">
       <figcaption>Παρέα, γέλιο και καλό φαγητό</figcaption>
     </figure>
     <figure class="gallery-item">
-      <img src="img/6c.jpg" alt="Στιγμή 6">
+      <img src="img/6.jpg" alt="Στιγμή 6">
       <figcaption>Καλαμάκια στην κάρβουνη σχάρα</figcaption>
     </figure>
     <figure class="gallery-item">
-      <img src="img/7c.jpg" alt="Στιγμή 7">
+      <img src="img/7.jpg" alt="Στιγμή 7">
       <figcaption>Φρέσκα ζυμαρικά της ημέρας</figcaption>
     </figure>
     <figure class="gallery-item">
-      <img src="img/8c.jpg" alt="Στιγμή 8">
+      <img src="img/8.jpg" alt="Στιγμή 8">
       <figcaption>Καλωσόρισμα με χαμόγελο</figcaption>
     </figure>
     <figure class="gallery-item">
-      <img src="img/9c.jpg" alt="Στιγμή 9">
+      <img src="img/9.jpg" alt="Στιγμή 9">
       <figcaption>Επιλεγμένη λίστα κρασιών</figcaption>
     </figure>
   </div>
@@ -510,7 +510,7 @@
       <h4>Newsletter</h4>
       <p class="muted">Νέα πιάτα και προσφορές στο inbox σας.</p>
       <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Εγγραφήκατε ✓';">
-        <input type="email" placeholder="email@σας.gr" required>
+        <input id="newsemail" name="newsemail" type="email" placeholder="email@σας.gr" required style="width: 64px">
         <button type="submit">Εγγραφή</button>
       </form>
     </div>
@@ -563,9 +563,7 @@
 
 <script src="js/jquery.min.js" defer></script>
 <script src="js/script.js" defer></script>
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer>
-</script>
+<script type="js/email.min.js"></script>
 <script type="text/javascript">
    (function(){
       emailjs.init({
