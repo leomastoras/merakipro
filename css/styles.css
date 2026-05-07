@@ -1175,7 +1175,8 @@ h3 {
   justify-content: center;
   width: 40px; height: 40px;
   border-radius: 50%;
-  background: var(--blue-deep);
+  /*background: var(--blue-deep);*/
+  background: var(--cream);
   color: var(--cream);
   font-size: 1.05rem;
   text-decoration: none;
@@ -1183,7 +1184,7 @@ h3 {
 }
 .social-row a i { line-height: 1; }
 .social-row a:hover {
-  background: var(--terracotta);
+  background: var(--cream);
   color: var(--cream);
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
