@@ -126,29 +126,29 @@
   <form class="form delivery-form" id="deliveryForm">
     <div class="form-row">
       <label>
-        <span><i class="fa-solid fa-user form-icon"></i> Ονοματεπώνυμο *</span>
+        <span><span class="form-icon">👤</span> Ονοματεπώνυμο *</span>
         <input id="name" type="text" name="name" required placeholder="Μαρία Παπαδοπούλου">
       </label>
       <label>
-        <span><i class="fa-solid fa-phone form-icon"></i> Τηλέφωνο *</span>
+        <span><span class="form-icon">📞</span> Τηλέφωνο *</span>
         <input id="tel" type="tel" name="phone" required placeholder="69xx xxx xxx">
       </label>
     </div>
 
     <div class="form-row">
       <label>
-        <span><i class="fa-solid fa-location-dot form-icon"></i> Διεύθυνση *</span>
+        <span><span class="form-icon">📍</span> Διεύθυνση *</span>
         <input id="address" type="text" name="address" required placeholder="Οδός & αριθμός">
       </label>
       <label>
-        <span><i class="fa-solid fa-bell form-icon"></i> Όροφος / κουδούνι</span>
+        <span><span class="form-icon">🔔</span> Όροφος / κουδούνι</span>
         <input id="floor" type="text" name="floor" placeholder="2ος, Παπαδόπουλος">
       </label>
     </div>
 
     <div class="form-row">
       <label>
-        <span><i class="fa-regular fa-clock form-icon"></i> Ώρα παράδοσης</span>
+        <span><span class="form-icon">🕐</span> Ώρα παράδοσης</span>
         <select id="time" name="time">
           <option>Το συντομότερο δυνατό</option>
           <option>Σε 30 λεπτά</option>
@@ -158,7 +158,7 @@
         </select>
       </label>
       <label>
-        <span><i class="fa-solid fa-credit-card form-icon"></i> Τρόπος πληρωμής</span>
+        <span><span class="form-icon">💳</span> Τρόπος πληρωμής</span>
         <select id="payment" name="payment">
           <option>Μετρητά</option>
           <option>Κάρτα στον διανομέα</option>
@@ -168,19 +168,19 @@
     </div>
 
     <div class="order-list-wrapper">
-      <span class="order-label"><i class="fa-solid fa-utensils form-icon"></i> Παραγγελία *</span>
+      <span class="order-label"><span class="form-icon">🍽️</span> Παραγγελία *</span>
       <ul class="order-list" id="orderList">
         <li class="order-empty">Η παραγγελία σας είναι κενή. Επιλέξτε ένα πιάτο από το μενού πιο πάνω.</li>
       </ul>
     </div>
 
     <label>
-      <span><i class="fa-regular fa-pen-to-square form-icon"></i> Σημειώσεις</span>
+      <span><span class="form-icon">✏️</span> Σημειώσεις</span>
       <textarea id="notes" name="notes" rows="2" placeholder="Αλλεργίες, οδηγίες παράδοσης, κ.λπ."></textarea>
     </label>
 
     <div class="form-actions">
-      <button id="btn-delivery" type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Αποστολή παραγγελίας</button>
+      <button id="btn-delivery" type="submit" class="btn btn-primary">📨 Αποστολή παραγγελίας</button>
       <span class="form-status" id="deliveryStatus"></span>
     </div>
   </form>
@@ -342,22 +342,22 @@
   <form class="form booking-form" id="bookingForm">
     <div class="form-row">
       <label>
-        <span><i class="fa-solid fa-user form-icon"></i> Ονοματεπώνυμο *</span>
+        <span><span class="form-icon">👤</span> Ονοματεπώνυμο *</span>
         <input type="text" name="name" required placeholder="Μαρία Παπαδοπούλου">
       </label>
       <label>
-        <span><i class="fa-solid fa-phone form-icon"></i> Τηλέφωνο *</span>
+        <span><span class="form-icon">📞</span> Τηλέφωνο *</span>
         <input type="tel" name="phone" required placeholder="69xx xxx xxx">
       </label>
     </div>
 
     <div class="form-row">
       <label>
-        <span><i class="fa-solid fa-envelope form-icon"></i> Email</span>
+        <span><span class="form-icon">✉️</span> Email</span>
         <input type="email" name="email" placeholder="προαιρετικό">
       </label>
       <label>
-        <span><i class="fa-solid fa-users form-icon"></i> Άτομα *</span>
+        <span><span class="form-icon">👥</span> Άτομα *</span>
         <select name="people" required>
           <option>1</option><option>2</option><option>3</option><option>4</option>
           <option>5</option><option>6</option><option>7</option><option>8</option>
@@ -368,11 +368,11 @@
 
     <div class="form-row">
       <label>
-        <span><i class="fa-solid fa-calendar-day form-icon"></i> Ημερομηνία *</span>
+        <span><span class="form-icon">📅</span> Ημερομηνία *</span>
         <input type="date" name="date" required>
       </label>
       <label>
-        <span><i class="fa-regular fa-clock form-icon"></i> Ώρα *</span>
+        <span><span class="form-icon">🕐</span> Ώρα *</span>
         <select name="time" required>
           <option value="">— Επιλέξτε —</option>
           <option>13:00</option><option>13:30</option><option>14:00</option>
@@ -386,7 +386,7 @@
 
     <div class="form-row">
       <label>
-        <span><i class="fa-solid fa-chair form-icon"></i> Προτίμηση καθίσματος</span>
+        <span><span class="form-icon">🪑</span> Προτίμηση καθίσματος</span>
         <select name="seating">
           <option>Καμία προτίμηση</option>
           <option>Εσωτερικός χώρος</option>
@@ -396,7 +396,7 @@
         </select>
       </label>
       <label>
-        <span><i class="fa-solid fa-champagne-glasses form-icon"></i> Περίσταση</span>
+        <span><span class="form-icon">🥂</span> Περίσταση</span>
         <select name="occasion">
           <option>Καθημερινό</option>
           <option>Γενέθλια</option>
@@ -408,12 +408,12 @@
     </div>
 
     <label>
-      <span><i class="fa-regular fa-pen-to-square form-icon"></i> Σημειώσεις</span>
+      <span><span class="form-icon">✏️</span> Σημειώσεις</span>
       <textarea name="notes" rows="3" placeholder="Αλλεργίες, παιδιά, ειδικά αιτήματα…"></textarea>
     </label>
 
     <div class="form-actions">
-      <button type="submit" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Επιβεβαίωση κράτησης</button>
+      <button type="submit" class="btn btn-primary">✅ Επιβεβαίωση κράτησης</button>
       <span class="form-status" id="bookingStatus"></span>
     </div>
   </form>
@@ -476,7 +476,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-col">
-      <img src="logo.svg" width="85%">
+      <img src="img/logo.svg" width="85%">
       <p class="brand-line">Το μεράκι της Γιωτάννας</p>
       <p class="muted">Σπιτική γεύση από το 2026.</p>
     </div>
