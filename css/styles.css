@@ -1132,7 +1132,7 @@ h3 {
   padding-bottom: 8px;
   position: relative;
   display: inline-block;
-}
+} 
 .loc-block h3::after {
   content: '';
   position: absolute;
