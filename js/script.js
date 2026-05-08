@@ -462,6 +462,155 @@ document.getElementById('btn-clear-booking').addEventListener('click', () => {
   document.getElementById('bookingStatus').textContent = '';
 });
 
+/* ---------- Order quiz ---------- */
+(function () {
+  const quizSection = document.getElementById('quiz');
+  if (!quizSection) return;
+
+  const steps        = quizSection.querySelectorAll('.quiz-step');
+  const progressFill = quizSection.querySelector('.quiz-progress-fill');
+  const progressText = quizSection.querySelector('.quiz-progress-text strong');
+  const backBtn      = document.getElementById('quizBack');
+  const addBtn       = document.getElementById('quizAddBtn');
+  const resetBtn     = document.getElementById('quizResetBtn');
+  const resultIcon   = document.getElementById('quizResultIcon');
+  const resultName   = document.getElementById('quizResultName');
+  const resultDesc   = document.getElementById('quizResultDesc');
+  const resultPrice  = document.getElementById('quizResultPrice');
+
+  const TOTAL_STEPS = 3;
+  let currentStep = 1; // 1..3 or 'result'
+  const answers = { hunger: null, taste: null, party: null };
+  let recommendedItem = null;
+
+  // Map of (hunger-taste-party) → which item in MENU to suggest
+  const RECOMMENDATIONS = {
+    'light-savory-solo':    { cat: 'sticks',  name: 'Καλαμάκι χοιρινό' },
+    'light-savory-couple':  { cat: 'sticks',  name: 'Πίτα καλαμάκι χοιρινό' },
+    'light-savory-group':   { cat: 'sticks',  name: 'Μερίδα 4 καλαμάκια' },
+    'light-sweet-solo':     { cat: 'sweets',  name: 'Πανακότα' },
+    'light-sweet-couple':   { cat: 'sweets',  name: 'Παγωτό 3 γεύσεων' },
+    'light-sweet-group':    { cat: 'sweets',  name: 'Λουκουμάδες' },
+    'light-drink-solo':     { cat: 'drinks',  name: 'Φραπέ / Freddo' },
+    'light-drink-couple':   { cat: 'drinks',  name: 'Φυσικός χυμός' },
+    'light-drink-group':    { cat: 'drinks',  name: 'Αναψυκτικά' },
+
+    'medium-savory-solo':   { cat: 'club',    name: 'Club Classic' },
+    'medium-savory-couple': { cat: 'pizza',   name: 'Μαργαρίτα' },
+    'medium-savory-group':  { cat: 'pizza',   name: 'Σπέσιαλ' },
+    'medium-sweet-solo':    { cat: 'sweets',  name: 'Τιραμισού' },
+    'medium-sweet-couple':  { cat: 'sweets',  name: 'Μηλόπιτα' },
+    'medium-sweet-group':   { cat: 'sweets',  name: 'Σουφλέ σοκολάτας' },
+    'medium-drink-solo':    { cat: 'drinks',  name: 'Μπύρα draft' },
+    'medium-drink-couple':  { cat: 'drinks',  name: 'Κρασί ποτήρι' },
+    'medium-drink-group':   { cat: 'drinks',  name: 'Κρασί φιάλη 750ml' },
+
+    'heavy-savory-solo':    { cat: 'burgers', name: 'Spicy Mexican' },
+    'heavy-savory-couple':  { cat: 'pasta',   name: 'Λιγκουίνι θαλασσινών' },
+    'heavy-savory-group':   { cat: 'sticks',  name: 'Σχάρας μικτή' },
+    'heavy-sweet-solo':     { cat: 'sweets',  name: 'Σουφλέ σοκολάτας' },
+    'heavy-sweet-couple':   { cat: 'sweets',  name: 'Μηλόπιτα' },
+    'heavy-sweet-group':    { cat: 'sweets',  name: 'Λουκουμάδες' },
+    'heavy-drink-solo':     { cat: 'drinks',  name: 'Cocktail' },
+    'heavy-drink-couple':   { cat: 'drinks',  name: 'Κρασί φιάλη 750ml' },
+    'heavy-drink-group':    { cat: 'drinks',  name: 'Τσίπουρο 200ml' },
+  };
+
+  function findItem(cat, name) {
+    if (typeof MENU === 'undefined' || !MENU[cat]) return null;
+    return MENU[cat].find(i => i.name === name) || MENU[cat][0];
+  }
+
+  function showStep(target) {
+    currentStep = target;
+    steps.forEach(s => {
+      const stepNum = s.dataset.step;
+      const isResult = stepNum === 'result';
+      const matches = isResult ? target === 'result' : parseInt(stepNum, 10) === target;
+      s.classList.toggle('active', matches);
+    });
+    if (target === 'result') {
+      progressFill.style.width = '100%';
+      progressText.textContent = '✓';
+      backBtn.classList.add('hidden');
+    } else {
+      progressFill.style.width = `${(target / TOTAL_STEPS) * 100}%`;
+      progressText.textContent = String(target);
+      backBtn.classList.toggle('hidden', target === 1);
+    }
+  }
+
+  function selectAnswer(option) {
+    const key = option.dataset.key;
+    const value = option.dataset.value;
+    answers[key] = value;
+    // Clear other selected siblings, mark this one
+    option.parentElement.querySelectorAll('.quiz-option').forEach(s => s.classList.remove('selected'));
+    option.classList.add('selected');
+    // Advance after a short pause so users see the highlight
+    setTimeout(() => {
+      if (currentStep < TOTAL_STEPS) {
+        showStep(currentStep + 1);
+      } else {
+        showResult();
+      }
+    }, 320);
+  }
+
+  function showResult() {
+    const key = `${answers.hunger}-${answers.taste}-${answers.party}`;
+    const rec = RECOMMENDATIONS[key];
+    let item = rec ? findItem(rec.cat, rec.name) : null;
+    if (!item && typeof MENU !== 'undefined') {
+      item = MENU.pizza && MENU.pizza[0];
+    }
+    recommendedItem = item;
+    if (item) {
+      resultIcon.textContent  = item.icon;
+      resultName.textContent  = item.name;
+      resultDesc.textContent  = item.desc;
+      resultPrice.textContent = `€${item.price.toFixed(2)}`;
+    }
+    showStep('result');
+  }
+
+  function reset() {
+    answers.hunger = null;
+    answers.taste  = null;
+    answers.party  = null;
+    recommendedItem = null;
+    quizSection.querySelectorAll('.quiz-option.selected').forEach(o => o.classList.remove('selected'));
+    showStep(1);
+  }
+
+  function goBack() {
+    if (currentStep === 'result') {
+      showStep(TOTAL_STEPS);
+    } else if (typeof currentStep === 'number' && currentStep > 1) {
+      showStep(currentStep - 1);
+    }
+  }
+
+  // Wire up
+  quizSection.querySelectorAll('.quiz-option').forEach(opt => {
+    opt.addEventListener('click', () => selectAnswer(opt));
+  });
+  backBtn.addEventListener('click', goBack);
+  resetBtn.addEventListener('click', reset);
+  addBtn.addEventListener('click', () => {
+    if (!recommendedItem || typeof addToOrder !== 'function') return;
+    addToOrder(recommendedItem, 1, []);
+    document.getElementById('delivery').scrollIntoView({ behavior: 'smooth' });
+    if (typeof orderListEl !== 'undefined' && orderListEl) {
+      orderListEl.classList.add('flash');
+      setTimeout(() => orderListEl.classList.remove('flash'), 800);
+    }
+  });
+
+  // Init
+  showStep(1);
+})();
+
 /* ---------- Featured dish of the week ---------- */
 (function () {
   const dishSection = document.getElementById('dish-of-week');

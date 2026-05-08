@@ -1995,173 +1995,291 @@ h3 {
   .team-initials { font-size: 1.8rem; }
 }
 
-/* ===== PHILOSOPHY ===== */
-.philosophy-card {
+/* ===== ORDER QUIZ ===== */
+.quiz-card {
   position: relative;
-  max-width: 780px;
+  max-width: 760px;
   margin: 0 auto;
+  background:
+    radial-gradient(80% 60% at 0% 0%, rgba(232,169,46,0.18) 0%, transparent 60%),
+    radial-gradient(70% 70% at 100% 100%, rgba(220,53,69,0.12) 0%, transparent 60%),
+    linear-gradient(135deg, var(--cream) 0%, #FFF8EE 60%, var(--apricot) 100%);
+  border-radius: var(--radius-lg);
+  padding: 44px 44px 56px;
+  box-shadow: 0 24px 56px rgba(44,38,32,0.18);
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+}
+/* Animated tri-color stripe along the top */
+.quiz-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg,
+    var(--terracotta) 0%,
+    #E8A92E 35%,
+    var(--blue) 70%,
+    var(--terracotta) 100%);
+  background-size: 250% 100%;
+  animation: quiz-stripe 7s linear infinite;
+  z-index: 1;
+}
+@keyframes quiz-stripe { to { background-position: 250% 0; } }
+
+/* Progress bar */
+.quiz-progress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.quiz-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: rgba(220,53,69,0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.quiz-progress-fill {
+  height: 100%;
+  width: 33.33%;
+  background: linear-gradient(90deg, var(--terracotta), #E8A92E);
+  border-radius: 999px;
+  transition: width .55s cubic-bezier(.4,0,.2,1);
+}
+.quiz-progress-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--stone);
+  white-space: nowrap;
+  letter-spacing: 0.4px;
+}
+.quiz-progress-text strong {
+  color: var(--terracotta);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+/* Steps — only the active one is shown, with a slide-in animation */
+.quiz-step {
+  display: none;
+  flex: 1;
+}
+.quiz-step.active {
+  display: block;
+  animation: quiz-step-in .45s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes quiz-step-in {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.quiz-question {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 800;
   text-align: center;
-  padding: 70px 40px 56px;
+  margin: 0 0 30px;
+  color: var(--blue-deep);
+  line-height: 1.3;
+}
+
+/* Option cards */
+.quiz-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.quiz-option {
+  position: relative;
+  background: var(--cream);
+  border: 2px solid rgba(13,110,253,0.08);
+  border-radius: var(--radius);
+  padding: 28px 18px 22px;
+  cursor: pointer;
+  text-align: center;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: transform .3s cubic-bezier(.4,0,.2,1),
+              box-shadow .3s ease,
+              border-color .25s ease,
+              background .25s ease;
+  overflow: hidden;
   isolation: isolate;
 }
-/* Oversized decorative quote glyph behind everything */
-.philosophy-mark {
+.quiz-option::before {
+  content: '';
   position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: Georgia, serif;
-  font-size: 11rem;
-  line-height: 1;
-  color: var(--terracotta);
-  opacity: 0.10;
-  font-weight: 700;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220,53,69,0.10) 0%, rgba(232,169,46,0.06) 100%);
+  opacity: 0;
+  transition: opacity .3s ease;
   pointer-events: none;
   z-index: -1;
-  user-select: none;
 }
+.quiz-option:hover {
+  transform: translateY(-6px);
+  border-color: var(--terracotta);
+  box-shadow: 0 16px 32px rgba(184,84,62,0.20);
+}
+.quiz-option:hover::before { opacity: 1; }
+.quiz-option:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 4px;
+}
+.quiz-option.selected {
+  border-color: var(--terracotta);
+  background: linear-gradient(135deg, var(--cream), var(--apricot));
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(184,84,62,0.28);
+}
+.quiz-option.selected::before { opacity: 1; }
 
-.philosophy-card .eyebrow {
-  margin-bottom: 14px;
-  position: relative;
+.quiz-option-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  margin-bottom: 4px;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
 }
-.philosophy-title {
-  margin: 0 0 28px;
+.quiz-option:hover .quiz-option-icon,
+.quiz-option.selected .quiz-option-icon {
+  transform: scale(1.18) rotate(-6deg);
 }
-/* Small ornament between title and quote */
-.philosophy-title::after {
-  content: '— · —';
-  display: block;
-  margin-top: 16px;
+.quiz-option-label {
   font-size: 1rem;
-  color: var(--terracotta);
-  letter-spacing: 8px;
-  font-weight: 600;
-  opacity: 0.55;
+  font-weight: 800;
+  color: var(--blue-deep);
+}
+.quiz-option-sub {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  font-weight: 500;
 }
 
-.philosophy-quote {
-  margin: 0 auto 38px;
-  padding: 0;
-  max-width: 660px;
+/* Result step */
+.quiz-step--result {
+  text-align: center;
+}
+.quiz-burst {
+  font-size: 2.6rem;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.quiz-step--result.active .quiz-burst {
+  animation: quiz-burst .7s cubic-bezier(.2,1.4,.4,1) both;
+}
+@keyframes quiz-burst {
+  0%   { transform: scale(0) rotate(-180deg); opacity: 0; }
+  60%  { transform: scale(1.3) rotate(20deg);  opacity: 1; }
+  100% { transform: scale(1) rotate(0);        opacity: 1; }
+}
+.quiz-result-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.quiz-result-card {
+  position: relative;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--apricot) 100%);
+  border: 2px solid rgba(220,53,69,0.30);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 24px;
+  margin: 0 auto 24px;
+  max-width: 480px;
+  box-shadow: 0 16px 38px rgba(184,84,62,0.22);
+}
+.quiz-step--result.active .quiz-result-card {
+  animation: quiz-card-in .55s cubic-bezier(.2,.9,.3,1) both .15s;
+}
+@keyframes quiz-card-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.94); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.quiz-result-icon {
+  font-size: 3.4rem;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.quiz-result-card h3 {
+  font-size: 1.5rem;
+  margin: 0 0 8px;
+  color: var(--blue-deep);
+}
+.quiz-result-card p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+.quiz-result-price {
+  display: inline-block;
   font-family: var(--font-display);
-  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
-  line-height: 1.65;
-  color: var(--ink);
-  font-style: italic;
-  font-weight: 400;
-}
-.philosophy-quote p {
-  margin: 0 0 18px;
-}
-.philosophy-quote p:last-child {
-  margin: 0;
-}
-.philosophy-quote em {
+  font-size: 1.7rem;
+  font-weight: 800;
   background: linear-gradient(135deg, var(--terracotta) 0%, #E8A92E 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  font-style: italic;
-  font-weight: 700;
-  position: relative;
+  letter-spacing: -0.5px;
+  line-height: 1;
 }
-
-/* Author signature pill */
-.philosophy-author {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 22px 12px 12px;
-  background: var(--cream);
-  border: 1.5px solid rgba(13,110,253,0.08);
-  border-radius: 999px;
-  box-shadow: var(--shadow-sm);
-  transition: transform .35s ease, box-shadow .35s ease, border-color .3s ease;
-}
-.philosophy-author:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(220,53,69,0.25);
-}
-.philosophy-avatar {
-  --avatar-bg: linear-gradient(135deg, var(--terracotta), #E8A92E);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--avatar-bg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--cream);
-  letter-spacing: 0.5px;
-  flex-shrink: 0;
-  box-shadow: 0 8px 16px rgba(184,84,62,0.32),
-              inset 0 0 0 3px rgba(250,243,231,0.30);
-}
-.philosophy-author-text {
+.quiz-result-actions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-}
-.philosophy-author-text strong {
-  font-size: 0.96rem;
-  color: var(--blue-deep);
-  font-weight: 700;
-  line-height: 1.2;
-}
-.philosophy-author-text span {
-  font-size: 0.72rem;
-  color: var(--terracotta);
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  margin-top: 2px;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
 }
 
-/* Floating leaves for warm corners */
-.philosophy-leaf {
+/* Back button */
+.quiz-back {
   position: absolute;
-  font-size: 2.4rem;
-  opacity: 0.18;
-  pointer-events: none;
-  z-index: -1;
-  animation: phil-sway 6s ease-in-out infinite;
+  bottom: 16px;
+  left: 16px;
+  background: transparent;
+  border: 0;
+  color: var(--stone);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: color .25s ease, background .25s ease;
+  z-index: 2;
 }
-.philosophy-leaf--1 {
-  top: 28px;
-  left: 4%;
-  transform: rotate(-25deg);
-  animation-delay: 0s;
+.quiz-back:hover {
+  color: var(--terracotta);
+  background: rgba(220,53,69,0.10);
 }
-.philosophy-leaf--2 {
-  bottom: 32px;
-  right: 4%;
-  transform: rotate(155deg);
-  animation-delay: 3s;
-}
-@keyframes phil-sway {
-  0%, 100% { transform: rotate(-25deg) translateY(0); }
-  50%      { transform: rotate(-15deg) translateY(-8px); }
-}
-.philosophy-leaf--2 {
-  animation-name: phil-sway-2;
-}
-@keyframes phil-sway-2 {
-  0%, 100% { transform: rotate(155deg) translateY(0); }
-  50%      { transform: rotate(165deg) translateY(-8px); }
-}
+.quiz-back.hidden { display: none; }
 
 @media (max-width: 600px) {
-  .philosophy-card { padding: 56px 24px 44px; }
-  .philosophy-mark { font-size: 7rem; top: 0; }
-  .philosophy-leaf { font-size: 1.8rem; }
+  .quiz-card { padding: 36px 22px 56px; min-height: auto; }
+  .quiz-options { grid-template-columns: 1fr; gap: 10px; }
+  .quiz-option {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+  }
+  .quiz-option-icon { font-size: 1.8rem; margin-bottom: 0; }
+  .quiz-option-label { font-size: 0.98rem; }
+  .quiz-option-sub { font-size: 0.78rem; }
 }
+
 
 /* ===== PRESS / MEDIA ===== */
 .press-grid {

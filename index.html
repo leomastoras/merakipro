@@ -611,30 +611,105 @@
   </div>
 </section>
 
-<!-- ========== PHILOSOPHY ========== -->
-<section id="philosophy" class="section">
-  <div class="philosophy-card">
-    <span class="philosophy-mark" aria-hidden="true">&ldquo;</span>
-    <span class="eyebrow">Η φιλοσοφία μας</span>
-    <h2 class="philosophy-title">Σαν στο σπίτι μας</h2>
+<!-- ========== ORDER QUIZ ========== -->
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="eyebrow">Τι να παραγγείλω;</span>
+    <h2>Βρείτε το ιδανικό σας πιάτο</h2>
+    <p class="lead">Τρεις γρήγορες ερωτήσεις και η Γιωτάννα προτείνει τι θα σας ταιριάξει σήμερα.</p>
+  </div>
 
-    <blockquote class="philosophy-quote">
-      <p>Πιστεύω ότι το <em>μεράκι</em> δεν είναι κάτι που μαθαίνεις στις σχολές. Είναι ο τρόπος που η γιαγιά μου έβαζε λίγη παραπάνω αγάπη στο φαγητό όταν ήξερε ότι θα έρθουν φίλοι στο τραπέζι.</p>
-      <p>Σήμερα, κάθε ζύμη που ζυμώνεται, κάθε σάλτσα που σιγοβράζει, κάθε πιάτο που σερβίρουμε — όλα κρύβουν αυτή τη μικρή, αόρατη <em>επιπλέον</em> προσοχή. Γι' αυτό σας περιμένουμε στο τραπέζι μας — όχι σαν πελάτες, αλλά σαν παρέα.</p>
-    </blockquote>
+  <div class="quiz-card" id="quizCard">
+    <!-- Progress -->
+    <div class="quiz-progress" aria-hidden="true">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill"></div></div>
+      <span class="quiz-progress-text"><strong>1</strong> / 3</span>
+    </div>
 
-    <div class="philosophy-author">
-      <div class="philosophy-avatar" style="--avatar-bg: linear-gradient(135deg, #B8543E 0%, #E8A92E 100%);">
-        <span>ΓΓ</span>
-      </div>
-      <div class="philosophy-author-text">
-        <strong>Γιωτάννα Γιαννούλη</strong>
-        <span>Ιδιοκτήτρια &amp; Executive Chef</span>
+    <!-- Step 1: hunger -->
+    <div class="quiz-step active" data-step="1" role="group" aria-label="Ερώτηση 1 από 3">
+      <h3 class="quiz-question">Πόσο πεινάτε;</h3>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option" data-key="hunger" data-value="light">
+          <span class="quiz-option-icon" aria-hidden="true">🥗</span>
+          <span class="quiz-option-label">Λιγάκι</span>
+          <span class="quiz-option-sub">Κάτι ελαφρύ</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="hunger" data-value="medium">
+          <span class="quiz-option-icon" aria-hidden="true">🍽️</span>
+          <span class="quiz-option-label">Κανονικά</span>
+          <span class="quiz-option-sub">Ένα γερό γεύμα</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="hunger" data-value="heavy">
+          <span class="quiz-option-icon" aria-hidden="true">🔥</span>
+          <span class="quiz-option-label">Πολύ!</span>
+          <span class="quiz-option-sub">Πεινάω σαν λύκος</span>
+        </button>
       </div>
     </div>
 
-    <span class="philosophy-leaf philosophy-leaf--1" aria-hidden="true">🌿</span>
-    <span class="philosophy-leaf philosophy-leaf--2" aria-hidden="true">🌿</span>
+    <!-- Step 2: taste -->
+    <div class="quiz-step" data-step="2" role="group" aria-label="Ερώτηση 2 από 3">
+      <h3 class="quiz-question">Τι σας τραβάει σήμερα;</h3>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option" data-key="taste" data-value="savory">
+          <span class="quiz-option-icon" aria-hidden="true">🧀</span>
+          <span class="quiz-option-label">Αλμυρό</span>
+          <span class="quiz-option-sub">Από την κουζίνα</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="taste" data-value="sweet">
+          <span class="quiz-option-icon" aria-hidden="true">🍰</span>
+          <span class="quiz-option-label">Γλυκό</span>
+          <span class="quiz-option-sub">Σπιτικά γλυκίσματα</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="taste" data-value="drink">
+          <span class="quiz-option-icon" aria-hidden="true">🥤</span>
+          <span class="quiz-option-label">Δροσιστικό</span>
+          <span class="quiz-option-sub">Ποτό ή χυμός</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: party -->
+    <div class="quiz-step" data-step="3" role="group" aria-label="Ερώτηση 3 από 3">
+      <h3 class="quiz-question">Για πόσους είναι;</h3>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option" data-key="party" data-value="solo">
+          <span class="quiz-option-icon" aria-hidden="true">🙋</span>
+          <span class="quiz-option-label">Μόνο εμένα</span>
+          <span class="quiz-option-sub">Ατομική μερίδα</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="party" data-value="couple">
+          <span class="quiz-option-icon" aria-hidden="true">👫</span>
+          <span class="quiz-option-label">Δύο άτομα</span>
+          <span class="quiz-option-sub">Για μοίρασμα</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="party" data-value="group">
+          <span class="quiz-option-icon" aria-hidden="true">👨‍👩‍👧</span>
+          <span class="quiz-option-label">Παρέα</span>
+          <span class="quiz-option-sub">3+ άτομα</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div class="quiz-step quiz-step--result" data-step="result" role="region" aria-live="polite">
+      <div class="quiz-burst" aria-hidden="true">✨</div>
+      <span class="quiz-result-eyebrow">Η πρότασή μας</span>
+      <div class="quiz-result-card">
+        <div class="quiz-result-icon" id="quizResultIcon" aria-hidden="true">🍕</div>
+        <h3 id="quizResultName">—</h3>
+        <p id="quizResultDesc">—</p>
+        <span class="quiz-result-price" id="quizResultPrice">€0.00</span>
+      </div>
+      <div class="quiz-result-actions">
+        <button type="button" class="btn btn-primary" id="quizAddBtn">🛵 Προσθήκη στην παραγγελία</button>
+        <button type="button" class="btn btn-outline" id="quizResetBtn">🔄 Δοκιμάστε ξανά</button>
+      </div>
+    </div>
+
+    <!-- Back nav -->
+    <button type="button" class="quiz-back" id="quizBack" aria-label="Προηγούμενη ερώτηση">← Πίσω</button>
   </div>
 </section>
 
