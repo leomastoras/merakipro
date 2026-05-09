@@ -1,0 +1,116 @@
+Here's a deeper, more exhaustive list — grouped by purpose, with previously-tried ideas marked [tried]. I've tried to push past the obvious into ideas with genuine visual or strategic distinctiveness.
+
+## 🧭 Discovery & decision aids
+- **Τι να παραγγείλω; (Order quiz)** [tried/current] — 3-question interactive quiz that recommends a real menu item.
+- **Χτίσε το δικό σου πιάτο (Build-your-own)** — Drag-and-drop pizza/burger builder where toppings update live price and calorie count. Highly engaging and reduces "I don't know what to order" friction.
+- **Συγκριτής μενού (Menu comparator)** — Pick 2-3 dishes to compare side-by-side: ingredients, price, calories, prep time, allergens. Useful for indecisive groups.
+- **Κουίζ ταιριάσματος κρασιού (Wine pairing wizard)** — Pick a dish, get the perfect wine recommendation from Νίκος (sommelier from Team).
+- **Αναζήτηση με αλλεργιογόνα (Allergen filter)** — Visual filter chips (vegan / gluten-free / nut-free / lactose-free) that narrow the menu in place. Reduces 5+ phone questions per week.
+
+## 🛡 Trust & reassurance
+- **Πιστοποιήσεις υγιεινής (Hygiene & safety)** — HACCP/ISO/local health authority badges with expiry dates. Builds delivery confidence.
+- **Πράσινες πρακτικές (Sustainability dashboard)** — Animated progress bars for biodegradable packaging %, kg recycled monthly, food-waste reduction. Green palette breaks the warm tone visually.
+- **Ζωντανές αξιολογήσεις (Live reviews aggregator)** — Embedded Google/Tripadvisor reviews with star count, auto-refreshed.
+- **Στηρίζουμε τη γειτονιά (Community impact)** — Charity initiatives, sponsored teams, holiday meal donations with running total of meals donated.
+- **Αποτύπωμα άνθρακα (Carbon-per-meal label)** — Small badge per menu item showing CO₂ footprint. Niche but distinctive — almost no restaurant does this.
+
+## 🎟 Promotions & loyalty hooks
+- **Δωροκάρτες (Gift cards)** [tried] — €25/€50/€100 tiered cards.
+- **Καθημερινές προσφορές (Daily specials)** [tried] — One special per day of the week.
+- **Newsletter με δώρο (Newsletter standalone)** [tried] — Email signup with -10% incentive.
+- **Πρώτη παραγγελία (Welcome discount)** — Standalone first-order promo box with copy-able coupon code and friendly illustration.
+- **Πρόγραμμα παραπομπής (Referral program)** — "Φέρε φίλο, κερδίστε δώρο" with shareable link generator. Compounding growth.
+- **Birthday Club** — Free dessert or appetizer on your birthday week if you book in advance. Simple, repeatable, builds habit.
+- **Εκπτώσεις εκτός αιχμής (Off-peak deals)** — -15% Monday-Wednesday lunch, "Lazy Sunday" pricing. Smooths kitchen demand.
+- **Pay it forward / Κερασμένος καφές** — Buy a meal for a stranger; we'll serve it to someone in need. Heartfelt + Greek "καφές κερασμένος" tradition.
+
+## 🎉 Experiences & memberships
+- **Μαθήματα μαγειρικής (Cooking classes)** [tried] — Workshops with the team chefs.
+- **Λίστα κρασιών (Wine list)** [tried] — Featured Greek wines.
+- **Wine tasting evenings** — Sommelier-led nights with Νίκος, 4 wines + small plates, monthly schedule + RSVP.
+- **Θεματικές βραδιές (Themed nights calendar)** — Cretan menu night, Italian classics, live folk music — with date badges and waitlist.
+- **Τραπέζι του σεφ (Chef's table)** — Premium kitchen-side seating with multi-course tasting menu. Books out fast, drives prestige.
+- **Wine club / Beer club subscription** — Monthly curated bottle delivered or held at the restaurant for pickup.
+- **Insider's Club / Founder's Circle** — Paid annual membership with early access to new dishes, priority booking, member-only events.
+
+## 📖 Storytelling & heritage
+- **Φιλοσοφία (Founder's philosophy)** [tried] — Typography-driven editorial quote.
+- **Συνταγές & ιστορίες (Stories/Blog)** [tried] — Magazine-style article cards.
+- **Από τη γιαγιά (Grandma's recipes scrapbook)** — Photos of handwritten recipe cards, faded family snapshots, taped polaroids. Completely different visual texture (paper, masking tape, kraft).
+- **Ο πρώτος μας χρόνος (Year-one timeline)** — Horizontal milestones: opening day → 1000th customer → first private event.
+- **Χάρτης γεύσεων Ελλάδας (Greece flavor map)** — Interactive map showing the regional origin of each signature dish (Cretan dakos, Ionian pastitsada, Asia Minor flavors). Educational + cultural.
+- **Συνταγή της εβδομάδας (Recipe of the week)** — Try-at-home recipe card refreshed weekly with ingredients/steps. Drives repeat site visits.
+- **Φιλοξενία (Greek hospitality explainer)** — Editorial section explaining the cultural concept of φιλοξενία and how it shapes the brand.
+
+## 📋 Practical info
+- **Οδηγός αλλεργιογόνων (Allergens guide)** — Static icon table mapping menu categories to dietary markers.
+- **Ζώνες παράδοσης (Delivery zones map)** — Map with min-order/fee per zip code, sets expectations before the form.
+- **Σήμερα είμαστε ανοιχτά (Live status)** — Open/closed indicator with hours, time-until-close, and current delivery wait.
+- **Πάρκινγκ & μετάβαση (Parking & transport)** — Where to park, nearby bus stops, bike racks, EV chargers.
+- **Φιλικό προς οικογένειες (Family facilities)** — High chairs, kids menu, baby-changing, free coloring sheets, parking.
+- **Φιλικό προς κατοικίδια (Pet-friendly badge)** — Patio rules, water bowls, dog menu items.
+
+## 🤳 Engagement & social
+- **#MerakiTzar (Instagram wall)** — Grid of customer-tagged photos pulled from a hashtag. Free always-fresh content.
+- **Διαγωνισμός φωτογραφίας (Photo contest)** — Submit your dish photo for a free dinner. Drives UGC.
+- **Wall of fame** — Celebrates customers who hit loyalty milestones (10th visit, 5th anniversary booking). Makes regulars feel seen.
+- **Behind the scenes webcam** — Live video feed from the kitchen pass. Theatrical and trust-building.
+- **Podcast / YouTube channel** — "Στο τραπέζι της Γιωτάννας" — short videos with chefs, suppliers, customers.
+
+## 🗓 Seasonal & event-driven
+- **Πασχαλινό μενού (Easter menu)** — Limited-time prix-fixe with traditional dishes.
+- **Πακέτα catering Χριστουγέννων (Holiday catering)** — Family-meal packages for Christmas/New Year, ordered in advance.
+- **Valentine's Day prix-fixe** — Couple's tasting menu with paired wines.
+- **Αποκριάτικο μενού (Carnival menu)** — Themed week with masquerade specials.
+- **Καλοκαιρινή αυλή (Summer garden opening)** — Announcement banner when outdoor seating opens for the season.
+
+## 🎯 Targeted audiences
+- **Παιδικό μενού & γωνιά (Kids corner)** — Dedicated kids menu, play area, free coloring sheets, birthday surprises.
+- **Φοιτητικές προσφορές (Student deals)** — -20% with student ID, hours posted.
+- **Εργαζόμενοι εστίασης (Industry night)** — Service-worker Mondays — chefs and waitstaff eat at cost. Builds local hospitality reputation.
+- **Catering για επιχειρήσεις (B2B corporate catering)** — Office lunches, weekly company meals, business dinners with tier packages.
+- **Catering γάμων (Wedding catering)** — Wedding rehearsal dinners, ceremony reception packages. Premium category.
+- **Catering για κινηματογραφικά πληρώματα (Film/TV catering)** — Niche but lucrative — production catering for TV shoots in the area.
+
+## 🏆 Recognition & rankings
+- **Top 5 της εβδομάδας (Bestsellers)** [tried] — Leaderboard of most-ordered dishes.
+- **Πιάτο της εβδομάδας (Dish of the week)** [exists] — Currently in the page.
+- **Βραβεία & διακρίσεις (Awards strip)** — Logo wall of awards: Tripadvisor, Time Out, local food guide.
+- **Πρώτο πιάτο της κουζίνας (Original-menu showcase)** — Which dishes have been on the menu since day 1 vs which are newer. Heritage feel.
+- **Hall of regulars** — A photo grid of long-time customers (with consent), captioned with their favorite dish. Heart-warming.
+
+## 🌱 Niche / experimental
+- **Δοκιμή ελαιολάδων (Olive oil tasting flight)** — Three Greek olive oils with bread, tasting notes, scoring sheet.
+- **Open kitchen day** — Once a month, dining-room visitors can tour the kitchen. Schedule + RSVP.
+- **Ραντεβού με τον σεφ (Meet-the-chef session)** — Book a 15-minute consultation for menu planning, dietary needs, special occasions.
+- **Φύτεψε ένα δέντρο (Plant-a-tree-with-purchase)** — Every order plants a tree via a partner NGO. Running counter of trees planted.
+- **Ποδηλάτες δωρεάν καφές (Free coffee for cyclists)** — Show your bike, get a free Greek coffee. Tiny gesture, huge brand differentiator in a small town.
+- **Pop-up locations** — Beach pop-up summer schedule, festival booths.
+- **Ιστορία τραπεζιών (Story of the tables)** — Each table named (Tραπέζι του Ναύτη, Τραπέζι της Γιαγιάς) with a backstory. Adds magic to "may I sit at the Marin table?"
+
+## 💼 Business / B2B
+- **Press kit (downloadable)** — High-res logos, photos, founder bio, fact sheet for journalists. Saves email back-and-forth.
+- **Συνεργασίες ξενοδοχείων (Hotel partnerships)** — Discount card for guests of partner hotels nearby.
+- **Wedding venue rental** — Private buyout pricing, capacity, sample floor plans.
+- **Music & event programming submission** — Form for local musicians to apply to play live nights.
+
+## 🎨 Visual / atmospheric
+- **Virtual tour (360°)** — Embedded panorama of the dining room and patio.
+- **Architecture story** — How the building used to be a 1920s warehouse / family home / etc. — with old photos.
+- **Art at the Μεράκι** — Rotating local artists' work on the walls; this section spotlights the current show with bio + buy links.
+
+---
+
+If I had to rank by **maximum visual differentiation from what's already on the page**, my top picks would be:
+
+1. **Από τη γιαγιά (Grandma's recipes scrapbook)** — paper/tape/polaroid texture is unlike anything else on the site
+2. **Χάρτης γεύσεων Ελλάδας (Greece flavor map)** — interactive map = new interaction model
+3. **Χτίσε το δικό σου πιάτο (Build-your-own)** — drag-and-drop builder = entirely new affordance
+4. **Behind-the-scenes webcam** — a live video region adds a totally new content type
+5. **Ιστορία τραπεζιών (Story of the tables)** — copy-driven and emotionally distinctive
+
+By **highest conversion potential**: Birthday Club, Welcome Discount, Wine Club subscription, Build-your-own, Allergen filter.
+
+By **most heart**: Pay-it-forward, Wall of Regulars, Plant-a-tree, Από τη γιαγιά.
+
+Want me to build any of these?
