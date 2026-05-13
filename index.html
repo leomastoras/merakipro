@@ -1173,14 +1173,5 @@
   </figure>
 </div>
 
-<!-- jQuery and the main script are bundled by webpack (src/index.js).
-     EmailJS stays as a vendor script tag because the bundle expects
-     the `emailjs` global to be initialised before script.js runs. -->
-<script src="js/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init({ publicKey: "A8ztVkz9lM3l1oYlQ" });
-  })();
-</script>
 </body>
 </html>

@@ -21,6 +21,8 @@
     "webpack-dev-server": "^5.2.4"
   },
   "dependencies": {
+    "crypto-browserify": "^3.12.1",
+    "emailjs": "^5.0.0",
     "jquery": "^3.7.1"
   },
   "browserslist": [

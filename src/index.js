@@ -12,13 +12,14 @@ import '../css/fonts.css';
 import '../css/styles.css';
 
 // Main interactive logic (menu, modal, forms, lightbox, quiz, etc.)
+import '../js/email.js';
 import '../js/script.js';
 
 // Register the service worker — kept here so the bundled JS owns it.
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register('./js/sw.js')
+      .register('../js/sw.js')
       .catch(err => console.warn('Service worker registration failed:', err));
   });
 }
