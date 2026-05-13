@@ -46,7 +46,7 @@ module.exports = (env, argv) => {
 
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html',
+        template: 'src/index.html',
         filename: 'index.html',
         inject: 'body',
         minify: isProd && {
