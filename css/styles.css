@@ -3204,12 +3204,19 @@ h3 {
   .stamp-grid { gap: 8px; }
 }
 
+.darkstripe {
+background: #242424;
+background: linear-gradient(180deg, rgb(19, 19, 19) 50%, rgba(44, 38, 32, 1) 90%);
+  height: 80px;
+}
+
 /* ===== FOOTER ===== */
 .footer {
-  background: var(--ink);
+background: #242424;
+background: linear-gradient(180deg, rgb(19, 19, 19) 10%, rgba(44, 38, 32, 1) 90%);
   color: var(--cream);
-  padding: 60px 32px 24px;
-  margin-top: 60px;
+  padding: 120px 32px 24px;
+  margin-top: 0px;
 }
 .footer-inner {
   max-width: 1200px;
