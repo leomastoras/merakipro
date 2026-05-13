@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 110" role="img" aria-label="Το μεράκι της Γιωτάννας">
+  <defs>
+    <linearGradient id="roof" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#C66B5C"/>
+      <stop offset="1" stop-color="#A8412F"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#F8DDB7"/>
+      <stop offset="1" stop-color="#EBC596"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Mark: stylized house -->
+  <g transform="translate(8 14)">
+    <!-- Roof -->
+    <path d="M5 32 L40 6 L75 32 Z" fill="url(#roof)" stroke="#7E2E1E" stroke-width="1.2"/>
+    <!-- Wall -->
+    <rect x="10" y="32" width="60" height="50" fill="url(#wall)" stroke="#B89366" stroke-width="1"/>
+    <!-- Door -->
+    <rect x="33" y="50" width="14" height="32" fill="#1F4F8A" stroke="#0F2E55" stroke-width="0.8"/>
+    <line x1="40" y1="50" x2="40" y2="82" stroke="#0F2E55" stroke-width="0.5"/>
+    <!-- Windows -->
+    <rect x="16" y="42" width="11" height="14" fill="#1F4F8A" stroke="#0F2E55" stroke-width="0.6"/>
+    <rect x="53" y="42" width="11" height="14" fill="#1F4F8A" stroke="#0F2E55" stroke-width="0.6"/>
+    <!-- Steam / heart over roof -->
+    <path d="M40 -2 c-3 -4 -9 -1 -7 4 c1 3 4 5 7 7 c3 -2 6 -4 7 -7 c2 -5 -4 -8 -7 -4 z" fill="#1F4F8A"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(96 0)" font-family="'Cormorant Garamond', serif" fill="#1F4F8A">
+    <text x="0" y="36" font-size="22" font-style="italic" font-weight="600" fill="#A8412F">Το μεράκι</text>
+    <text x="0" y="62" font-size="14" font-weight="500" letter-spacing="3" fill="#6B5648">— ΤΗΣ —</text>
+    <text x="0" y="92" font-size="32" font-weight="700">Γιωτάννας</text>
+  </g>
+</svg>

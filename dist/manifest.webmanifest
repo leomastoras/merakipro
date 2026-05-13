@@ -1,0 +1,54 @@
+{
+  "name": "Το μεράκι της Γιωτάννας",
+  "short_name": "Μεράκι",
+  "description": "Σπιτική ελληνική γεύση, μενού, delivery και online κράτηση τραπεζιού.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAF3E7",
+  "theme_color": "#B8543E",
+  "lang": "el",
+  "dir": "ltr",
+  "categories": ["food", "lifestyle"],
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Delivery",
+      "short_name": "Delivery",
+      "description": "Παραγγείλτε φαγητό στο σπίτι",
+      "url": "./index.html#delivery"
+    },
+    {
+      "name": "Κράτηση τραπεζιού",
+      "short_name": "Κράτηση",
+      "description": "Κλείστε τραπέζι online",
+      "url": "./index.html#booking"
+    },
+    {
+      "name": "Μενού",
+      "short_name": "Μενού",
+      "description": "Δείτε το μενού μας",
+      "url": "./index.html#menu"
+    }
+  ]
+}
