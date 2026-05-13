@@ -17,11 +17,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">-->
-<link rel="preload" href="css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="css/fonts.css"></noscript>
-<link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="css/styles.css"></noscript>
+<!-- CSS is injected by webpack (see src/index.js) -->
 </head>
 <body>
 
@@ -106,26 +102,49 @@
   </div>
 </section>
 
-<!-- ========== MENU ========== -->
-<section id="menu" class="section section-alt">
+<!-- ========== WHY US (expandable cards) ========== -->
+<section id="why-us" class="section section-alt">
   <div class="section-head">
-    <span class="eyebrow">Η κουζίνα μας</span>
-    <h2>Το μενού</h2>
-    <p class="lead">Πατήστε σε κάθε πιάτο για να δείτε λεπτομέρειες, υλικά και τιμή.</p>
+    <span class="eyebrow">Γιατί εμάς</span>
+    <h2>Τι μας κάνει ξεχωριστούς</h2>
+    <p class="lead">Επιλέξτε μια κάρτα για να διαβάσετε περισσότερα.</p>
   </div>
 
-  <!-- Category tabs -->
-  <div class="menu-tabs" role="tablist">
-    <button class="tab active" role="tab" data-cat="pizza">🍕 Πίτσες</button>
-    <button class="tab" role="tab" data-cat="burgers">🍔 Burgers</button>
-    <button class="tab" role="tab" data-cat="sticks">🍢 Καλαμάκια</button>
-    <button class="tab" role="tab" data-cat="club">🥪 Club</button>
-    <button class="tab" role="tab" data-cat="pasta">🍝 Ζυμαρικά</button>
-    <button class="tab" role="tab" data-cat="sweets">🍰 Γλυκά</button>
-    <button class="tab" role="tab" data-cat="drinks">🥤 Ποτά</button>
+  <div class="info-cards" id="infoCards">
+    <article class="info-card active" tabindex="0" data-card="wine">
+      <span class="info-card-icon">🍷</span>
+      <div class="info-card-text">
+        <h3>Επιλεγμένη λίστα κρασιών</h3>
+        <p>Ελληνικές ετικέτες από κάθε γωνιά της χώρας.</p>
+      </div>
+    </article>
+
+    <article class="info-card" tabindex="0" data-card="eco">
+      <span class="info-card-icon">🌿</span>
+      <div class="info-card-text">
+        <h3>Βιώσιμη πρακτική</h3>
+        <p>Φροντίζουμε για το περιβάλλον σε κάθε βήμα.</p>
+      </div>
+    </article>
+
+    <article class="info-card" tabindex="0" data-card="team">
+      <span class="info-card-icon">👨‍🍳</span>
+      <div class="info-card-text">
+        <h3>Η ομάδα μας</h3>
+        <p>Έμπειροι σεφ και προσωπικό με μεράκι.</p>
+      </div>
+    </article>
+
+    <article class="info-card" tabindex="0" data-card="community">
+      <span class="info-card-icon">❤️</span>
+      <div class="info-card-text">
+        <h3>Δίπλα στην κοινότητα</h3>
+        <p>Στηρίζουμε τη γειτονιά που μας μεγάλωσε.</p>
+      </div>
+    </article>
   </div>
 
-  <div class="menu-grid" id="menuGrid"><!-- filled by JS --></div>
+  <div class="info-detail" id="infoDetail" aria-live="polite"></div>
 </section>
 
 <!-- ========== DISH OF THE WEEK ========== -->
@@ -171,41 +190,26 @@
   </article>
 </section>
 
-<!-- ========== STATS ========== -->
-<section id="stats" class="section section-alt stats">
-  <div class="stats-inner">
-    <div class="stats-head">
-      <span class="eyebrow">Με νούμερα</span>
-      <h2>Πρώτος χρόνος μεράκι</h2>
-      <p>Πίσω από κάθε πιάτο κρύβονται χρόνια αγάπης, χιλιάδες χαμόγελα και αμέτρητες στιγμές γιορτής γύρω από το τραπέζι.</p>
-    </div>
-
-    <div class="stats-grid">
-      <article class="stat">
-        <div class="stat-icon">🌟</div>
-        <div class="stat-num">1/4<span class="stat-plus"></span></div>
-        <div class="stat-label">Χρόνο λειτουργίας</div>
-      </article>
-
-      <article class="stat">
-        <div class="stat-icon">🍽️</div>
-        <div class="stat-num">1500<span class="stat-plus"></span></div>
-        <div class="stat-label">Πιάτα σερβιρισμένα</div>
-      </article>
-
-      <article class="stat">
-        <div class="stat-icon">⭐</div>
-        <div class="stat-num">4.9<span class="stat-plus">/5</span></div>
-        <div class="stat-label">Αξιολόγηση πελατών</div>
-      </article>
-
-      <article class="stat">
-        <div class="stat-icon">😊</div>
-        <div class="stat-num">250<span class="stat-plus"></span></div>
-        <div class="stat-label">Χαρούμενοι πελάτες</div>
-      </article>
-    </div>
+<!-- ========== MENU ========== -->
+<section id="menu" class="section section-alt">
+  <div class="section-head">
+    <span class="eyebrow">Η κουζίνα μας</span>
+    <h2>Το μενού</h2>
+    <p class="lead">Πατήστε σε κάθε πιάτο για να δείτε λεπτομέρειες, υλικά και τιμή.</p>
   </div>
+
+  <!-- Category tabs -->
+  <div class="menu-tabs" role="tablist">
+    <button class="tab active" role="tab" data-cat="pizza">🍕 Πίτσες</button>
+    <button class="tab" role="tab" data-cat="burgers">🍔 Burgers</button>
+    <button class="tab" role="tab" data-cat="sticks">🍢 Καλαμάκια</button>
+    <button class="tab" role="tab" data-cat="club">🥪 Club</button>
+    <button class="tab" role="tab" data-cat="pasta">🍝 Ζυμαρικά</button>
+    <button class="tab" role="tab" data-cat="sweets">🍰 Γλυκά</button>
+    <button class="tab" role="tab" data-cat="drinks">🥤 Ποτά</button>
+  </div>
+
+  <div class="menu-grid" id="menuGrid"><!-- filled by JS --></div>
 </section>
 
 <!-- ========== DELIVERY ========== -->
@@ -280,96 +284,143 @@
   </form>
 </section>
 
-<!-- ========== WHY US (expandable cards) ========== -->
-<section id="why-us" class="section section-alt">
-  <div class="section-head">
-    <span class="eyebrow">Γιατί εμάς</span>
-    <h2>Τι μας κάνει ξεχωριστούς</h2>
-    <p class="lead">Επιλέξτε μια κάρτα για να διαβάσετε περισσότερα.</p>
+<!-- ========== STATS ========== -->
+<section id="stats" class="section section-alt stats">
+  <div class="stats-inner">
+    <div class="stats-head">
+      <span class="eyebrow">Με νούμερα</span>
+      <h2>Πρώτος χρόνος μεράκι</h2>
+      <p>Πίσω από κάθε πιάτο κρύβονται χρόνια αγάπης, χιλιάδες χαμόγελα και αμέτρητες στιγμές γιορτής γύρω από το τραπέζι.</p>
+    </div>
+
+    <div class="stats-grid">
+      <article class="stat">
+        <div class="stat-icon">🌟</div>
+        <div class="stat-num">1/4<span class="stat-plus"></span></div>
+        <div class="stat-label">Χρόνο λειτουργίας</div>
+      </article>
+
+      <article class="stat">
+        <div class="stat-icon">🍽️</div>
+        <div class="stat-num">1500<span class="stat-plus"></span></div>
+        <div class="stat-label">Πιάτα σερβιρισμένα</div>
+      </article>
+
+      <article class="stat">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-num">4.9<span class="stat-plus">/5</span></div>
+        <div class="stat-label">Αξιολόγηση πελατών</div>
+      </article>
+
+      <article class="stat">
+        <div class="stat-icon">😊</div>
+        <div class="stat-num">250<span class="stat-plus"></span></div>
+        <div class="stat-label">Χαρούμενοι πελάτες</div>
+      </article>
+    </div>
   </div>
-
-  <div class="info-cards" id="infoCards">
-    <article class="info-card active" tabindex="0" data-card="wine">
-      <span class="info-card-icon">🍷</span>
-      <div class="info-card-text">
-        <h3>Επιλεγμένη λίστα κρασιών</h3>
-        <p>Ελληνικές ετικέτες από κάθε γωνιά της χώρας.</p>
-      </div>
-    </article>
-
-    <article class="info-card" tabindex="0" data-card="eco">
-      <span class="info-card-icon">🌿</span>
-      <div class="info-card-text">
-        <h3>Βιώσιμη πρακτική</h3>
-        <p>Φροντίζουμε για το περιβάλλον σε κάθε βήμα.</p>
-      </div>
-    </article>
-
-    <article class="info-card" tabindex="0" data-card="team">
-      <span class="info-card-icon">👨‍🍳</span>
-      <div class="info-card-text">
-        <h3>Η ομάδα μας</h3>
-        <p>Έμπειροι σεφ και προσωπικό με μεράκι.</p>
-      </div>
-    </article>
-
-    <article class="info-card" tabindex="0" data-card="community">
-      <span class="info-card-icon">❤️</span>
-      <div class="info-card-text">
-        <h3>Δίπλα στην κοινότητα</h3>
-        <p>Στηρίζουμε τη γειτονιά που μας μεγάλωσε.</p>
-      </div>
-    </article>
-  </div>
-
-  <div class="info-detail" id="infoDetail" aria-live="polite"></div>
 </section>
 
-<!-- ========== PROCESS TIMELINE ========== -->
-<section id="process" class="section">
+<!-- ========== ORDER QUIZ ========== -->
+<section id="quiz" class="section">
   <div class="section-head">
-    <span class="eyebrow">Από τον αγρό στο τραπέζι</span>
-    <h2>Πώς φτιάχνουμε το φαγητό σας</h2>
-    <p class="lead">Πίσω από κάθε πιάτο κρύβονται τέσσερα βήματα γεμάτα φροντίδα. Έτσι φτάνει στο τραπέζι σας κάθε μερίδα.</p>
+    <span class="eyebrow">Τι να παραγγείλω;</span>
+    <h2>Βρείτε το ιδανικό σας πιάτο</h2>
+    <p class="lead">Τρεις γρήγορες ερωτήσεις και η Γιωτάννα προτείνει τι θα σας ταιριάξει σήμερα.</p>
   </div>
 
-  <ol class="process-steps">
-    <li class="process-step">
-      <div class="process-num">01</div>
-      <div class="process-icon">🌱</div>
-      <div class="process-body">
-        <h3>Φρέσκα, τοπικά υλικά</h3>
-        <p>Κάθε πρωί φτάνουν στην πόρτα μας λαχανικά από τους κήπους της περιοχής, κρεατικά από τον τοπικό κρεοπώλη και ψάρι από τον λιμενοβραχίονα.</p>
-      </div>
-    </li>
+  <div class="quiz-card" id="quizCard">
+    <!-- Progress -->
+    <div class="quiz-progress" aria-hidden="true">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill"></div></div>
+      <span class="quiz-progress-text"><strong>1</strong> / 3</span>
+    </div>
 
-    <li class="process-step">
-      <div class="process-num">02</div>
-      <div class="process-icon">👩‍🍳</div>
-      <div class="process-body">
-        <h3>Προετοιμασία με μεράκι</h3>
-        <p>Η ζύμη μας ζυμώνεται με προζύμι 48 ωρών, οι σάλτσες σιγοβράζουν για ώρες και τα γλυκά φτιάχνονται στο χέρι κάθε πρωί.</p>
+    <!-- Step 1: hunger -->
+    <div class="quiz-step active" data-step="1" role="group" aria-label="Ερώτηση 1 από 3">
+      <h3 class="quiz-question">Πόσο πεινάτε;</h3>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option" data-key="hunger" data-value="light">
+          <span class="quiz-option-icon" aria-hidden="true">🥗</span>
+          <span class="quiz-option-label">Λιγάκι</span>
+          <span class="quiz-option-sub">Κάτι ελαφρύ</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="hunger" data-value="medium">
+          <span class="quiz-option-icon" aria-hidden="true">🍽️</span>
+          <span class="quiz-option-label">Κανονικά</span>
+          <span class="quiz-option-sub">Ένα γερό γεύμα</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="hunger" data-value="heavy">
+          <span class="quiz-option-icon" aria-hidden="true">🔥</span>
+          <span class="quiz-option-label">Πολύ!</span>
+          <span class="quiz-option-sub">Πεινάω σαν λύκος</span>
+        </button>
       </div>
-    </li>
+    </div>
 
-    <li class="process-step">
-      <div class="process-num">03</div>
-      <div class="process-icon">🔥</div>
-      <div class="process-body">
-        <h3>Μαγείρεμα με αγάπη</h3>
-        <p>Από τον φουρνο για τις πίτσες μέχρι την φωτιά για τα καλαμάκια — χρησιμοποιούμε παραδοσιακές τεχνικές που χαρίζουν αυθεντική γεύση.</p>
+    <!-- Step 2: taste -->
+    <div class="quiz-step" data-step="2" role="group" aria-label="Ερώτηση 2 από 3">
+      <h3 class="quiz-question">Τι σας τραβάει σήμερα;</h3>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option" data-key="taste" data-value="savory">
+          <span class="quiz-option-icon" aria-hidden="true">🧀</span>
+          <span class="quiz-option-label">Αλμυρό</span>
+          <span class="quiz-option-sub">Από την κουζίνα</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="taste" data-value="sweet">
+          <span class="quiz-option-icon" aria-hidden="true">🍰</span>
+          <span class="quiz-option-label">Γλυκό</span>
+          <span class="quiz-option-sub">Σπιτικά γλυκίσματα</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="taste" data-value="drink">
+          <span class="quiz-option-icon" aria-hidden="true">🥤</span>
+          <span class="quiz-option-label">Δροσιστικό</span>
+          <span class="quiz-option-sub">Ποτό ή χυμός</span>
+        </button>
       </div>
-    </li>
+    </div>
 
-    <li class="process-step">
-      <div class="process-num">04</div>
-      <div class="process-icon">🍽️</div>
-      <div class="process-body">
-        <h3>Σερβίρισμα με χαμόγελο</h3>
-        <p>Στο τραπέζι ή στην πόρτα σας μέσα σε 30–45 λεπτά, ζεστό και φρέσκο — πάντα συνοδευμένο από ένα ειλικρινές «καλή σας όρεξη».</p>
+    <!-- Step 3: party -->
+    <div class="quiz-step" data-step="3" role="group" aria-label="Ερώτηση 3 από 3">
+      <h3 class="quiz-question">Για πόσους είναι;</h3>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option" data-key="party" data-value="solo">
+          <span class="quiz-option-icon" aria-hidden="true">🙋</span>
+          <span class="quiz-option-label">Μόνο εμένα</span>
+          <span class="quiz-option-sub">Ατομική μερίδα</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="party" data-value="couple">
+          <span class="quiz-option-icon" aria-hidden="true">👫</span>
+          <span class="quiz-option-label">Δύο άτομα</span>
+          <span class="quiz-option-sub">Για μοίρασμα</span>
+        </button>
+        <button type="button" class="quiz-option" data-key="party" data-value="group">
+          <span class="quiz-option-icon" aria-hidden="true">👨‍👩‍👧</span>
+          <span class="quiz-option-label">Παρέα</span>
+          <span class="quiz-option-sub">3+ άτομα</span>
+        </button>
       </div>
-    </li>
-  </ol>
+    </div>
+
+    <!-- Result -->
+    <div class="quiz-step quiz-step--result" data-step="result" role="region" aria-live="polite">
+      <div class="quiz-burst" aria-hidden="true">✨</div>
+      <span class="quiz-result-eyebrow">Η πρότασή μας</span>
+      <div class="quiz-result-card">
+        <div class="quiz-result-icon" id="quizResultIcon" aria-hidden="true">🍕</div>
+        <h3 id="quizResultName">—</h3>
+        <p id="quizResultDesc">—</p>
+        <span class="quiz-result-price" id="quizResultPrice">€0.00</span>
+      </div>
+      <div class="quiz-result-actions">
+        <button type="button" class="btn btn-primary" id="quizAddBtn">🛵 Προσθήκη στην παραγγελία</button>
+        <button type="button" class="btn btn-outline" id="quizResetBtn">🔄 Δοκιμάστε ξανά</button>
+      </div>
+    </div>
+
+    <!-- Back nav -->
+    <button type="button" class="quiz-back" id="quizBack" aria-label="Προηγούμενη ερώτηση">← Πίσω</button>
+  </div>
 </section>
 
 <!-- ========== LOCAL PARTNERS ========== -->
@@ -611,106 +662,51 @@
   </div>
 </section>
 
-<!-- ========== ORDER QUIZ ========== -->
-<section id="quiz" class="section">
+<!-- ========== PROCESS TIMELINE ========== -->
+<section id="process" class="section">
   <div class="section-head">
-    <span class="eyebrow">Τι να παραγγείλω;</span>
-    <h2>Βρείτε το ιδανικό σας πιάτο</h2>
-    <p class="lead">Τρεις γρήγορες ερωτήσεις και η Γιωτάννα προτείνει τι θα σας ταιριάξει σήμερα.</p>
+    <span class="eyebrow">Από τον αγρό στο τραπέζι</span>
+    <h2>Πώς φτιάχνουμε το φαγητό σας</h2>
+    <p class="lead">Πίσω από κάθε πιάτο κρύβονται τέσσερα βήματα γεμάτα φροντίδα. Έτσι φτάνει στο τραπέζι σας κάθε μερίδα.</p>
   </div>
 
-  <div class="quiz-card" id="quizCard">
-    <!-- Progress -->
-    <div class="quiz-progress" aria-hidden="true">
-      <div class="quiz-progress-bar"><div class="quiz-progress-fill"></div></div>
-      <span class="quiz-progress-text"><strong>1</strong> / 3</span>
-    </div>
-
-    <!-- Step 1: hunger -->
-    <div class="quiz-step active" data-step="1" role="group" aria-label="Ερώτηση 1 από 3">
-      <h3 class="quiz-question">Πόσο πεινάτε;</h3>
-      <div class="quiz-options">
-        <button type="button" class="quiz-option" data-key="hunger" data-value="light">
-          <span class="quiz-option-icon" aria-hidden="true">🥗</span>
-          <span class="quiz-option-label">Λιγάκι</span>
-          <span class="quiz-option-sub">Κάτι ελαφρύ</span>
-        </button>
-        <button type="button" class="quiz-option" data-key="hunger" data-value="medium">
-          <span class="quiz-option-icon" aria-hidden="true">🍽️</span>
-          <span class="quiz-option-label">Κανονικά</span>
-          <span class="quiz-option-sub">Ένα γερό γεύμα</span>
-        </button>
-        <button type="button" class="quiz-option" data-key="hunger" data-value="heavy">
-          <span class="quiz-option-icon" aria-hidden="true">🔥</span>
-          <span class="quiz-option-label">Πολύ!</span>
-          <span class="quiz-option-sub">Πεινάω σαν λύκος</span>
-        </button>
+  <ol class="process-steps">
+    <li class="process-step">
+      <div class="process-num">01</div>
+      <div class="process-icon">🌱</div>
+      <div class="process-body">
+        <h3>Φρέσκα, τοπικά υλικά</h3>
+        <p>Κάθε πρωί φτάνουν στην πόρτα μας λαχανικά από τους κήπους της περιοχής, κρεατικά από τον τοπικό κρεοπώλη και ψάρι από τον λιμενοβραχίονα.</p>
       </div>
-    </div>
+    </li>
 
-    <!-- Step 2: taste -->
-    <div class="quiz-step" data-step="2" role="group" aria-label="Ερώτηση 2 από 3">
-      <h3 class="quiz-question">Τι σας τραβάει σήμερα;</h3>
-      <div class="quiz-options">
-        <button type="button" class="quiz-option" data-key="taste" data-value="savory">
-          <span class="quiz-option-icon" aria-hidden="true">🧀</span>
-          <span class="quiz-option-label">Αλμυρό</span>
-          <span class="quiz-option-sub">Από την κουζίνα</span>
-        </button>
-        <button type="button" class="quiz-option" data-key="taste" data-value="sweet">
-          <span class="quiz-option-icon" aria-hidden="true">🍰</span>
-          <span class="quiz-option-label">Γλυκό</span>
-          <span class="quiz-option-sub">Σπιτικά γλυκίσματα</span>
-        </button>
-        <button type="button" class="quiz-option" data-key="taste" data-value="drink">
-          <span class="quiz-option-icon" aria-hidden="true">🥤</span>
-          <span class="quiz-option-label">Δροσιστικό</span>
-          <span class="quiz-option-sub">Ποτό ή χυμός</span>
-        </button>
+    <li class="process-step">
+      <div class="process-num">02</div>
+      <div class="process-icon">👩‍🍳</div>
+      <div class="process-body">
+        <h3>Προετοιμασία με μεράκι</h3>
+        <p>Η ζύμη μας ζυμώνεται με προζύμι 48 ωρών, οι σάλτσες σιγοβράζουν για ώρες και τα γλυκά φτιάχνονται στο χέρι κάθε πρωί.</p>
       </div>
-    </div>
+    </li>
 
-    <!-- Step 3: party -->
-    <div class="quiz-step" data-step="3" role="group" aria-label="Ερώτηση 3 από 3">
-      <h3 class="quiz-question">Για πόσους είναι;</h3>
-      <div class="quiz-options">
-        <button type="button" class="quiz-option" data-key="party" data-value="solo">
-          <span class="quiz-option-icon" aria-hidden="true">🙋</span>
-          <span class="quiz-option-label">Μόνο εμένα</span>
-          <span class="quiz-option-sub">Ατομική μερίδα</span>
-        </button>
-        <button type="button" class="quiz-option" data-key="party" data-value="couple">
-          <span class="quiz-option-icon" aria-hidden="true">👫</span>
-          <span class="quiz-option-label">Δύο άτομα</span>
-          <span class="quiz-option-sub">Για μοίρασμα</span>
-        </button>
-        <button type="button" class="quiz-option" data-key="party" data-value="group">
-          <span class="quiz-option-icon" aria-hidden="true">👨‍👩‍👧</span>
-          <span class="quiz-option-label">Παρέα</span>
-          <span class="quiz-option-sub">3+ άτομα</span>
-        </button>
+    <li class="process-step">
+      <div class="process-num">03</div>
+      <div class="process-icon">🔥</div>
+      <div class="process-body">
+        <h3>Μαγείρεμα με αγάπη</h3>
+        <p>Από τον φουρνο για τις πίτσες μέχρι την φωτιά για τα καλαμάκια — χρησιμοποιούμε παραδοσιακές τεχνικές που χαρίζουν αυθεντική γεύση.</p>
       </div>
-    </div>
+    </li>
 
-    <!-- Result -->
-    <div class="quiz-step quiz-step--result" data-step="result" role="region" aria-live="polite">
-      <div class="quiz-burst" aria-hidden="true">✨</div>
-      <span class="quiz-result-eyebrow">Η πρότασή μας</span>
-      <div class="quiz-result-card">
-        <div class="quiz-result-icon" id="quizResultIcon" aria-hidden="true">🍕</div>
-        <h3 id="quizResultName">—</h3>
-        <p id="quizResultDesc">—</p>
-        <span class="quiz-result-price" id="quizResultPrice">€0.00</span>
+    <li class="process-step">
+      <div class="process-num">04</div>
+      <div class="process-icon">🍽️</div>
+      <div class="process-body">
+        <h3>Σερβίρισμα με χαμόγελο</h3>
+        <p>Στο τραπέζι ή στην πόρτα σας μέσα σε 30–45 λεπτά, ζεστό και φρέσκο — πάντα συνοδευμένο από ένα ειλικρινές «καλή σας όρεξη».</p>
       </div>
-      <div class="quiz-result-actions">
-        <button type="button" class="btn btn-primary" id="quizAddBtn">🛵 Προσθήκη στην παραγγελία</button>
-        <button type="button" class="btn btn-outline" id="quizResetBtn">🔄 Δοκιμάστε ξανά</button>
-      </div>
-    </div>
-
-    <!-- Back nav -->
-    <button type="button" class="quiz-back" id="quizBack" aria-label="Προηγούμενη ερώτηση">← Πίσω</button>
-  </div>
+    </li>
+  </ol>
 </section>
 
 <!-- ========== PRESS / MEDIA ========== -->
@@ -1057,17 +1053,14 @@
   </figure>
 </div>
 
-<script src="js/jquery.min.js" defer></script>
-<script src="js/script.js" defer></script>
+<!-- jQuery and the main script are bundled by webpack (src/index.js).
+     EmailJS stays as a vendor script tag because the bundle expects
+     the `emailjs` global to be initialised before script.js runs. -->
 <script src="js/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "A8ztVkz9lM3l1oYlQ",
-      });
-   })();
-
-  ('serviceWorker' in navigator) && window.addEventListener('load', () => navigator.serviceWorker.register('js/sw.js').catch(err => console.warn('Service worker registration failed:', err)));
+<script>
+  (function(){
+    emailjs.init({ publicKey: "A8ztVkz9lM3l1oYlQ" });
+  })();
 </script>
 </body>
 </html>

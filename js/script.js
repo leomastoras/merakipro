@@ -60,7 +60,7 @@ const MENU = {
   ],
 
   drinks: [
-    { icon: '🥤', name: 'Αναψυκτικά',            price: 2.00, desc: 'Coca-Cola, Sprite, Fanta — επιλογή σε φιάλη 330ml.', ing: ['Coca-Cola','Sprite','Fanta'] },
+    { icon: '🥤', name: 'Αναψυκτικά',            price: 2.00, desc: 'Coca-Cola, Sprite, Fanta, Schweppes — επιλογή σε φιάλη 330ml.', ing: ['Coca-Cola','Sprite','Fanta','Schweppes'] },
     { icon: '💧', name: 'Εμφιαλωμένο νερό',       price: 0.80, desc: 'Φυσικό μεταλλικό νερό 500ml ή 1L.', ing: ['Φυσικό','500ml','1L'] },
     { icon: '✨', name: 'Ανθρακούχο νερό',        price: 1.50, desc: 'Δροσιστικό ανθρακούχο με λεμόνι ή φυσικό.', ing: ['Ανθρακούχο','Λεμόνι'] },
     { icon: '🧃', name: 'Φυσικός χυμός',          price: 3.00, desc: 'Φρεσκοστυμμένος χυμός πορτοκάλι ή ανάμεικτος εποχής.', ing: ['Πορτοκάλι','Ανάμεικτος','Λεμόνι'] },
@@ -74,6 +74,12 @@ const MENU = {
     { icon: '🧊', name: 'Φραπέ / Freddo',           price: 2.80, desc: 'Δροσιστικός φραπέ ή freddo espresso/cappuccino.', ing: ['Φραπέ','Freddo Espresso','Freddo Cappuccino'] },
   ],
 };
+
+/* Tag each menu item with its category so downstream code (modal, recommendations)
+   can identify what kind of item it is without relying on call-site arguments. */
+Object.keys(MENU).forEach(cat => {
+  MENU[cat].forEach(item => { item.category = cat; });
+});
 
 /* ---------- Render menu ---------- */
 const grid = document.getElementById('menuGrid');
@@ -91,7 +97,7 @@ function renderCategory(cat) {
       <span class="price">€${item.price.toFixed(2)}</span>
       <span class="more">Πατήστε για λεπτομέρειες →</span>
     `;
-    btn.addEventListener('click', () => openModal(item));
+    btn.addEventListener('click', () => openModal(item, cat));
     grid.appendChild(btn);
     btn.style.opacity = 0;
     btn.style.transform = 'translateY(10px)';
@@ -149,15 +155,35 @@ qtyPlus.addEventListener('click', () => {
   if (currentQty < MAX_QTY) { currentQty++; updateQtyUI(); }
 });
 
-function openModal(item) {
+const modalHint = document.querySelector('#itemModal .modal-ingredients-hint');
+const DEFAULT_HINT = modalHint ? modalHint.textContent : '';
+const DRINKS_HINT  = 'Επιλέξτε την παραλλαγή που θέλετε';
+
+function openModal(item, cat) {
   currentItem = item;
   currentQty  = 1;
   currentExcluded = new Set();
   modalIcon.textContent  = item.icon;
   modalTitle.textContent = item.name;
   modalDesc.textContent  = item.desc;
-  modalIngrs.innerHTML   = item.ing
-    .map(i => `<li data-ing="${i.replace(/"/g, '&quot;')}">${i}</li>`)
+
+  // For drinks, ingredients are exclusive variants — pre-select the first
+  // and mark the rest as excluded by default.
+  // Detect via the item's own category tag (resilient to call-site changes).
+  const isDrinks = item.category === 'drinks' || cat === 'drinks';
+  if (isDrinks && Array.isArray(item.ing)) {
+    item.ing.slice(1).forEach(i => currentExcluded.add(i));
+  }
+  if (modalHint) {
+    modalHint.textContent = isDrinks ? DRINKS_HINT : DEFAULT_HINT;
+  }
+
+  modalIngrs.innerHTML = item.ing
+    .map((i, idx) => {
+      const safe = i.replace(/"/g, '&quot;');
+      const cls  = (isDrinks && idx > 0) ? ' class="excluded"' : '';
+      return `<li data-ing="${safe}"${cls}>${i}</li>`;
+    })
     .join('');
   modalIngrs.querySelectorAll('li').forEach(pill => {
     pill.addEventListener('click', () => {
