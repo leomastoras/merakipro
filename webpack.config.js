@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
     entry: './src/index.js',
 
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'docs'),
       filename: isProd ? 'js/[name].[contenthash:8].js' : 'js/[name].js',
       assetModuleFilename: 'assets/[name].[hash:8][ext]',
       clean: true,
@@ -106,7 +106,7 @@ module.exports = (env, argv) => {
     },
 
     devServer: {
-      static: { directory: path.join(__dirname, 'dist') },
+      static: { directory: path.join(__dirname, 'docs') },
       port: 5173,
       hot: true,
       open: true,
