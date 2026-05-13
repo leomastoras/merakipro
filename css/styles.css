@@ -3210,6 +3210,352 @@ background: linear-gradient(180deg, rgb(19, 19, 19) 50%, rgba(44, 38, 32, 1) 90%
   height: 80px;
 }
 
+/* ===== PHILOSOPHY ===== */
+.philosophy-card {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 70px 40px 56px;
+  isolation: isolate;
+}
+.philosophy-mark {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Georgia, serif;
+  font-size: 11rem;
+  line-height: 1;
+  color: var(--terracotta);
+  opacity: 0.10;
+  font-weight: 700;
+  pointer-events: none;
+  z-index: -1;
+  user-select: none;
+}
+.philosophy-card .eyebrow {
+  margin-bottom: 14px;
+  position: relative;
+}
+.philosophy-title {
+  margin: 0 0 28px;
+  background: linear-gradient(135deg,
+    var(--blue-deep) 0%,
+    var(--terracotta) 55%,
+    #E8A92E 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 6px;
+}
+.philosophy-title::after {
+  content: '— · —';
+  display: block;
+  margin-top: 16px;
+  font-size: 1rem;
+  color: var(--terracotta);
+  -webkit-text-fill-color: var(--terracotta);
+  letter-spacing: 8px;
+  font-weight: 600;
+  opacity: 0.55;
+}
+.philosophy-quote {
+  margin: 0 auto 38px;
+  padding: 0;
+  max-width: 660px;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  line-height: 1.65;
+  color: var(--ink);
+  font-style: italic;
+  font-weight: 400;
+}
+.philosophy-quote p { margin: 0 0 18px; }
+.philosophy-quote p:last-child { margin: 0; }
+.philosophy-quote em {
+  background: linear-gradient(135deg, var(--terracotta) 0%, #E8A92E 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-weight: 700;
+}
+.philosophy-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 22px 12px 12px;
+  background: var(--cream);
+  border: 1.5px solid rgba(13,110,253,0.08);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .35s ease, box-shadow .35s ease, border-color .3s ease;
+}
+.philosophy-author:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(220,53,69,0.25);
+}
+.philosophy-avatar {
+  --avatar-bg: linear-gradient(135deg, var(--terracotta), #E8A92E);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--avatar-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--cream);
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 16px rgba(184,84,62,0.32),
+              inset 0 0 0 3px rgba(250,243,231,0.30);
+}
+.philosophy-author-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.philosophy-author-text strong {
+  font-size: 0.96rem;
+  color: var(--blue-deep);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.philosophy-author-text span {
+  font-size: 0.72rem;
+  color: var(--terracotta);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.philosophy-leaf {
+  position: absolute;
+  font-size: 2.4rem;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: -1;
+}
+.philosophy-leaf--1 {
+  top: 28px;
+  left: 4%;
+  animation: phil-sway 6s ease-in-out infinite;
+}
+.philosophy-leaf--2 {
+  bottom: 32px;
+  right: 4%;
+  animation: phil-sway-2 6s ease-in-out infinite 3s;
+}
+@keyframes phil-sway {
+  0%, 100% { transform: rotate(-25deg) translateY(0); }
+  50%      { transform: rotate(-15deg) translateY(-8px); }
+}
+@keyframes phil-sway-2 {
+  0%, 100% { transform: rotate(155deg) translateY(0); }
+  50%      { transform: rotate(165deg) translateY(-8px); }
+}
+@media (max-width: 600px) {
+  .philosophy-card { padding: 56px 24px 44px; }
+  .philosophy-mark { font-size: 7rem; top: 0; }
+  .philosophy-leaf { font-size: 1.8rem; }
+}
+
+/* ===== BESTSELLERS LEADERBOARD ===== */
+#bestsellers .bestsellers-list {
+  list-style: none;
+  padding: 0;
+  padding-inline-start: 0;
+  margin: 0 auto 24px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  max-width: 720px;
+  width: 100%;
+  box-sizing: border-box;
+}
+#bestsellers .bestsellers-note {
+  max-width: 720px;
+  margin-inline: auto;
+}
+.best-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 76px 60px 1fr auto;
+  gap: 22px;
+  align-items: center;
+  background: var(--cream);
+  border: 1.5px solid rgba(13,110,253,0.06);
+  border-radius: var(--radius-lg);
+  padding: 20px 26px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .35s cubic-bezier(.4,0,.2,1),
+              box-shadow .35s ease,
+              border-color .35s ease;
+  isolation: isolate;
+  overflow: hidden;
+}
+.best-item:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(220,53,69,0.22);
+}
+.best-rank {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.best-rank-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--stone) 0%, #6b6258 100%);
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18),
+              inset 0 0 0 3px rgba(250,243,231,0.25);
+  transition: transform .4s ease, box-shadow .35s ease;
+}
+.best-item:hover .best-rank-num {
+  transform: rotate(-8deg) scale(1.08);
+}
+.best-rank-medal {
+  position: absolute;
+  bottom: -4px;
+  right: -2px;
+  font-size: 1.4rem;
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,0.30));
+  transition: transform .4s ease;
+}
+.best-item:hover .best-rank-medal {
+  transform: rotate(15deg) scale(1.15);
+}
+.best-item--gold {
+  background: linear-gradient(90deg, var(--cream) 0%, rgba(232,169,46,0.20) 100%);
+  border-color: rgba(232,169,46,0.45);
+}
+.best-item--gold .best-rank-num {
+  background: linear-gradient(135deg, #f5d568 0%, #c8932b 100%);
+  box-shadow: 0 12px 26px rgba(200,147,43,0.45),
+              inset 0 0 0 3px rgba(250,243,231,0.40);
+}
+.best-item--silver {
+  background: linear-gradient(90deg, var(--cream) 0%, rgba(160,160,160,0.16) 100%);
+  border-color: rgba(160,160,160,0.32);
+}
+.best-item--silver .best-rank-num {
+  background: linear-gradient(135deg, #dcdcdc 0%, #909090 100%);
+  box-shadow: 0 10px 22px rgba(140,140,140,0.32),
+              inset 0 0 0 3px rgba(250,243,231,0.35);
+}
+.best-item--bronze {
+  background: linear-gradient(90deg, var(--cream) 0%, rgba(184,84,62,0.14) 100%);
+  border-color: rgba(184,84,62,0.32);
+}
+.best-item--bronze .best-rank-num {
+  background: linear-gradient(135deg, #d68a4d 0%, #8a4a26 100%);
+  box-shadow: 0 10px 22px rgba(138,74,38,0.42),
+              inset 0 0 0 3px rgba(250,243,231,0.35);
+}
+.best-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  text-align: center;
+  transition: transform .4s ease;
+}
+.best-item:hover .best-icon {
+  transform: scale(1.18) rotate(-6deg);
+}
+.best-body h3 {
+  font-size: 1.18rem;
+  margin: 0 0 4px;
+  color: var(--blue-deep);
+  line-height: 1.25;
+}
+.best-body p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.best-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+.best-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(74,124,42,0.14);
+  color: #4a7c2a;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+}
+.best-price {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--terracotta) 0%, #E8A92E 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.4px;
+  line-height: 1;
+}
+.bestsellers-note {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--stone);
+  margin: 0;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+@media (max-width: 700px) {
+  .best-item {
+    grid-template-columns: 60px 1fr;
+    grid-template-areas:
+      "rank body"
+      "rank meta";
+    gap: 14px 18px;
+    padding: 18px 22px;
+  }
+  .best-rank { grid-area: rank; align-self: start; padding-top: 4px; }
+  .best-icon { display: none; }
+  .best-body { grid-area: body; }
+  .best-meta {
+    grid-area: meta;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2px;
+  }
+  .best-rank-num { width: 48px; height: 48px; font-size: 1.4rem; }
+  .best-rank-medal { font-size: 1.2rem; }
+  .best-item:hover { transform: translateY(-4px); }
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background: #242424;
