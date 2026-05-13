@@ -39,7 +39,7 @@ module.exports = (env, argv) => {
         {
           test: /\.(woff2?|ttf|otf|eot)$/i,
           type: 'asset/resource',
-          generator: { filename: 'css/fonts/[name].[hash:8][ext]' },
+          generator: { filename: 'fonts/[name].[hash:8][ext]' },
         },
       ],
     },
