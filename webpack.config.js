@@ -27,7 +27,15 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/,
           use: [
-            isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+            isProd
+              ? {
+                  loader: MiniCssExtractPlugin.loader,
+                  // The extracted CSS lives in css/, so url() references
+                  // (fonts, images) must resolve one level up to the
+                  // output root instead of relative to the CSS file.
+                  options: { publicPath: '../' },
+                }
+              : 'style-loader',
             'css-loader',
           ],
         },
@@ -74,7 +82,7 @@ module.exports = (env, argv) => {
       // Extract CSS into its own file in production
       ...(isProd
         ? [new MiniCssExtractPlugin({
-            filename: '[name].[contenthash:8].css',
+            filename: 'css/[name].[contenthash:8].css',
           })]
         : []),
 
