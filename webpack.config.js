@@ -39,7 +39,7 @@ module.exports = (env, argv) => {
         {
           test: /\.(woff2?|ttf|otf|eot)$/i,
           type: 'asset/resource',
-          generator: { filename: 'css/fonts/[name].[hash:8][ext]' },
+          generator: { filename: 'fonts/[name].[hash:8][ext]' },
         },
       ],
     },
@@ -78,7 +78,6 @@ module.exports = (env, argv) => {
           { from: 'img', to: 'img', noErrorOnMissing: true },
           { from: 'manifest.webmanifest', to: 'manifest.webmanifest', noErrorOnMissing: true },
           { from: 'js/sw.js', to: 'js/sw.js', noErrorOnMissing: true },
-          { from: 'js/email.min.js', to: 'js/email.min.js', noErrorOnMissing: true },
         ],
       }),
     ],
