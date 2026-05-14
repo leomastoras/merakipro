@@ -24,7 +24,9 @@
     "@emailjs/browser": "^4.4.1",
     "crypto-browserify": "^3.12.1",
     "emailjs": "^5.0.0",
-    "jquery": "^3.7.1"
+    "file-loader": "^6.2.0",
+    "jquery": "^3.7.1",
+    "url-loader": "^4.1.1"
   },
   "browserslist": [
     "> 0.5%",

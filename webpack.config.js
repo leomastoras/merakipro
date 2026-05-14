@@ -38,8 +38,14 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.(woff2?|ttf|otf|eot)$/i,
-          type: 'asset/resource',
-          generator: { filename: 'fonts/[name].[hash:8][ext]' },
+          //type: 'asset/resource',
+          //generator: { filename: './css/[name].[hash:8][ext]' },
+           loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: '[name].[hash:8][ext]',
+              outputPath: 'fonts/'
+            }
         },
       ],
     },
