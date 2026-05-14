@@ -3,8 +3,6 @@ const CACHE_VERSION = 'meraki-v2';
 const PRECACHE_URLS = [
   '../',
   '../index.html',
-  '../css/styles.css',
-  '../css/fonts.css',
   '../js/script.js',
   '../js/email.js',
   '../manifest.webmanifest',
