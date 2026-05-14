@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
     output: {
       path: path.resolve(__dirname, 'docs'),
       filename: isProd ? 'js/[name].[contenthash:8].js' : 'js/[name].js',
-      assetModuleFilename: 'assets/[name].[hash:8][ext]',
+      assetModuleFilename: 'assets/[name].[contenthash:8][ext]',
       clean: true,
       publicPath: '',
     },
@@ -38,14 +38,14 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.(woff2?|ttf|otf|eot)$/i,
-          //type: 'asset/resource',
-          //generator: { filename: './css/[name].[hash:8][ext]' },
-           loader: 'url-loader',
+          type: 'asset/resource',
+          generator: { filename: 'css/[name].[hash:8][ext]' },
+          /* loader: 'url-loader',
             options: {
               limit: 8192,
-              name: '[name].[hash:8].[ext]',
+              name: '[name].[contenthash:8].[ext]',
               outputPath: '/css/assets/'
-            }
+            }*/
         },
       ],
     },
@@ -74,7 +74,7 @@ module.exports = (env, argv) => {
       // Extract CSS into its own file in production
       ...(isProd
         ? [new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css',
+            filename: '[name].[contenthash:8].css',
           })]
         : []),
 
