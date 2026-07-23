@@ -15,10 +15,10 @@
   --apricot-2:  #EFC9A6;
   --blue:       #0d6efd;/*3A6FA0*/
   --blue-deep:  #084298;/*2C5478*/
-  --terracotta: #dc3545; /*#B8543E;*/
+  --terracotta: #BE2532; /* darkened from #dc3545 for WCAG AA contrast */
   --terracotta-2:#842029;/*9C4632*/
   --cream:      #FAF3E7;
-  --stone:      #8C8278;
+  --stone:      #675E54; /* darkened from #8C8278 for WCAG AA contrast */
   --ink:        #2C2620;
   --ink-soft:   #4A413A;
 
@@ -3504,8 +3504,8 @@ background: linear-gradient(180deg, rgb(19, 19, 19) 50%, rgba(44, 38, 32, 1) 90%
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  background: rgba(74,124,42,0.14);
-  color: #4a7c2a;
+  background: rgba(54,89,30,0.16);
+  color: #36591E; /* darkened green for WCAG AA contrast on the tinted pill */
   font-size: 0.78rem;
   font-weight: 800;
   padding: 4px 10px;
