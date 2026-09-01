@@ -3826,3 +3826,8 @@ background: linear-gradient(180deg, rgb(19, 19, 19) 50%, rgba(44, 38, 32, 1) 90%
   .menu-tabs { gap: 8px; }
   .tab { padding: 8px 14px; font-size: 0.85rem; }
 }
+
+
+#delivery, #dish-of-week, #loyalty, #booking {
+  display: none;
+}
